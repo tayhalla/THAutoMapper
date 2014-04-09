@@ -6,13 +6,17 @@
 //  Copyright (c) 2013 GatherInc. All rights reserved.
 //
 
-// This is the main class I use to deserialize objects coming down from the rails server I have.
-// The class was small enough to use as a sample code showing, and was something that I made that I thought was
-// particularily useful. Prior to this, I was manually de-serializing objects (which quickly became cumbersome).
-
 #import "NSManagedObject+GathrCoreDataSupport.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+
+static NSString *__sentinelPropertyName = nil;
+static BOOL *__topLevelClassNameInPayload = NO;
+
+typedef enum THAutoMapperParseMethod {
+    THAutoMapperParseWithoutClassPrefix,
+    THAutoMapperParseWithClassPrefix
+} THAutoMapperParseMethod;
 
 @implementation NSManagedObject (GathrCoreDataSupport)
 
@@ -32,10 +36,6 @@
 - (BOOL)updateInstanceWithJSONResponse:(NSDictionary *)payload
                                  error:(NSError **)error
 {
-    /* Class partiy
-        If required, checking that top level class syntactically matches class string
-        in top-level payload.
-    */
     if ([self topLevelClassParity:payload]) {
         // Grabbing the properties of both the response and CD entity
         NSString *classKey = [NSStringFromClass([self class]) lowercaseString];
@@ -266,5 +266,52 @@
     }
     return propertyName;
 }
+
+#pragma mark - THAutoMapper Configuration
+
+/*
+ Setter for JSON Parsing Method
+ */
++ (void)setJSONParsingMethod:(THAutoMapperParseMethod)parsingMethod
+{
+    switch (parsingMethod) {
+        case THAutoMapperParseWithClassPrefix:
+            __topLevelClassNameInPayload = YES;
+            break;
+        case THAutoMapperParseWithClassPrefix:
+            __topLevelClassNameInPayload = NO;
+            break;
+        default:
+            break;
+    }
+}
+
+/*
+ Getter for JSON Parsing Method
+ 
+ DEFAULT is THAutoMapperParseWithoutClassPrefix
+ */
++ (THAutoMapperParseMethod)JSONParsingMethod
+{
+    switch (__topLevelClassNameInPayload) {
+        case YES:
+            return THAutoMapperParseWithClassPrefix;
+            break;
+        case NO:
+            return THAutoMapperParseWithoutClassPrefix;
+            break;
+        default:
+            break;
+    }
+}
+
++ (void)setSentinelPropertyName:(NSString *)propertyName
+{
+    if (__sentinelPropertyName != propertyName) {
+        __sentinelPropertyName = propertyName;
+    }
+    
+}
+
 
 @end

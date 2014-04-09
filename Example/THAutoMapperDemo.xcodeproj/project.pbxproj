@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		240ABB2D18F4A30700E9AB37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB2C18F4A30700E9AB37 /* Foundation.framework */; };
+		240ABB2F18F4A30700E9AB37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB2E18F4A30700E9AB37 /* CoreGraphics.framework */; };
+		240ABB3118F4A30700E9AB37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB3018F4A30700E9AB37 /* UIKit.framework */; };
+		240ABB3318F4A30700E9AB37 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB3218F4A30700E9AB37 /* CoreData.framework */; };
+		240ABB3918F4A30700E9AB37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 240ABB3718F4A30700E9AB37 /* InfoPlist.strings */; };
+		240ABB3B18F4A30700E9AB37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ABB3A18F4A30700E9AB37 /* main.m */; };
+		240ABB3F18F4A30700E9AB37 /* THAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ABB3E18F4A30700E9AB37 /* THAppDelegate.m */; };
+		240ABB4218F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 240ABB4018F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld */; };
+		240ABB4418F4A30700E9AB37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 240ABB4318F4A30700E9AB37 /* Images.xcassets */; };
+		240ABB4B18F4A30700E9AB37 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB4A18F4A30700E9AB37 /* XCTest.framework */; };
+		240ABB4C18F4A30700E9AB37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB2C18F4A30700E9AB37 /* Foundation.framework */; };
+		240ABB4D18F4A30700E9AB37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB3018F4A30700E9AB37 /* UIKit.framework */; };
+		240ABB4E18F4A30700E9AB37 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB3218F4A30700E9AB37 /* CoreData.framework */; };
+		240ABB5618F4A30700E9AB37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 240ABB5418F4A30700E9AB37 /* InfoPlist.strings */; };
+		240ABB5818F4A30700E9AB37 /* THAutoMapperDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		240ABB4F18F4A30700E9AB37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 240ABB2118F4A30700E9AB37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 240ABB2818F4A30700E9AB37;
+			remoteInfo = THAutoMapperDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		240ABB2918F4A30700E9AB37 /* THAutoMapperDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THAutoMapperDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		240ABB2C18F4A30700E9AB37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		240ABB2E18F4A30700E9AB37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		240ABB3018F4A30700E9AB37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		240ABB3218F4A30700E9AB37 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		240ABB3618F4A30700E9AB37 /* THAutoMapperDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THAutoMapperDemo-Info.plist"; sourceTree = "<group>"; };
+		240ABB3818F4A30700E9AB37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		240ABB3A18F4A30700E9AB37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		240ABB3C18F4A30700E9AB37 /* THAutoMapperDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "THAutoMapperDemo-Prefix.pch"; sourceTree = "<group>"; };
+		240ABB3D18F4A30700E9AB37 /* THAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAppDelegate.h; sourceTree = "<group>"; };
+		240ABB3E18F4A30700E9AB37 /* THAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAppDelegate.m; sourceTree = "<group>"; };
+		240ABB4118F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = THAutoMapperDemo.xcdatamodel; sourceTree = "<group>"; };
+		240ABB4318F4A30700E9AB37 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		240ABB4918F4A30700E9AB37 /* THAutoMapperDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THAutoMapperDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		240ABB4A18F4A30700E9AB37 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		240ABB5318F4A30700E9AB37 /* THAutoMapperDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THAutoMapperDemoTests-Info.plist"; sourceTree = "<group>"; };
+		240ABB5518F4A30700E9AB37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAutoMapperDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		240ABB2618F4A30700E9AB37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240ABB2F18F4A30700E9AB37 /* CoreGraphics.framework in Frameworks */,
+				240ABB3318F4A30700E9AB37 /* CoreData.framework in Frameworks */,
+				240ABB3118F4A30700E9AB37 /* UIKit.framework in Frameworks */,
+				240ABB2D18F4A30700E9AB37 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		240ABB4618F4A30700E9AB37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240ABB4B18F4A30700E9AB37 /* XCTest.framework in Frameworks */,
+				240ABB4E18F4A30700E9AB37 /* CoreData.framework in Frameworks */,
+				240ABB4D18F4A30700E9AB37 /* UIKit.framework in Frameworks */,
+				240ABB4C18F4A30700E9AB37 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		240ABB2018F4A30700E9AB37 = {
+			isa = PBXGroup;
+			children = (
+				240ABB3418F4A30700E9AB37 /* THAutoMapperDemo */,
+				240ABB5118F4A30700E9AB37 /* THAutoMapperDemoTests */,
+				240ABB2B18F4A30700E9AB37 /* Frameworks */,
+				240ABB2A18F4A30700E9AB37 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		240ABB2A18F4A30700E9AB37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				240ABB2918F4A30700E9AB37 /* THAutoMapperDemo.app */,
+				240ABB4918F4A30700E9AB37 /* THAutoMapperDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		240ABB2B18F4A30700E9AB37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				240ABB2C18F4A30700E9AB37 /* Foundation.framework */,
+				240ABB2E18F4A30700E9AB37 /* CoreGraphics.framework */,
+				240ABB3018F4A30700E9AB37 /* UIKit.framework */,
+				240ABB3218F4A30700E9AB37 /* CoreData.framework */,
+				240ABB4A18F4A30700E9AB37 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		240ABB3418F4A30700E9AB37 /* THAutoMapperDemo */ = {
+			isa = PBXGroup;
+			children = (
+				240ABB3D18F4A30700E9AB37 /* THAppDelegate.h */,
+				240ABB3E18F4A30700E9AB37 /* THAppDelegate.m */,
+				240ABB4318F4A30700E9AB37 /* Images.xcassets */,
+				240ABB4018F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld */,
+				240ABB3518F4A30700E9AB37 /* Supporting Files */,
+			);
+			path = THAutoMapperDemo;
+			sourceTree = "<group>";
+		};
+		240ABB3518F4A30700E9AB37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				240ABB3618F4A30700E9AB37 /* THAutoMapperDemo-Info.plist */,
+				240ABB3718F4A30700E9AB37 /* InfoPlist.strings */,
+				240ABB3A18F4A30700E9AB37 /* main.m */,
+				240ABB3C18F4A30700E9AB37 /* THAutoMapperDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		240ABB5118F4A30700E9AB37 /* THAutoMapperDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */,
+				240ABB5218F4A30700E9AB37 /* Supporting Files */,
+			);
+			path = THAutoMapperDemoTests;
+			sourceTree = "<group>";
+		};
+		240ABB5218F4A30700E9AB37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				240ABB5318F4A30700E9AB37 /* THAutoMapperDemoTests-Info.plist */,
+				240ABB5418F4A30700E9AB37 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		240ABB2818F4A30700E9AB37 /* THAutoMapperDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 240ABB5B18F4A30700E9AB37 /* Build configuration list for PBXNativeTarget "THAutoMapperDemo" */;
+			buildPhases = (
+				240ABB2518F4A30700E9AB37 /* Sources */,
+				240ABB2618F4A30700E9AB37 /* Frameworks */,
+				240ABB2718F4A30700E9AB37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = THAutoMapperDemo;
+			productName = THAutoMapperDemo;
+			productReference = 240ABB2918F4A30700E9AB37 /* THAutoMapperDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		240ABB4818F4A30700E9AB37 /* THAutoMapperDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 240ABB5E18F4A30700E9AB37 /* Build configuration list for PBXNativeTarget "THAutoMapperDemoTests" */;
+			buildPhases = (
+				240ABB4518F4A30700E9AB37 /* Sources */,
+				240ABB4618F4A30700E9AB37 /* Frameworks */,
+				240ABB4718F4A30700E9AB37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				240ABB5018F4A30700E9AB37 /* PBXTargetDependency */,
+			);
+			name = THAutoMapperDemoTests;
+			productName = THAutoMapperDemoTests;
+			productReference = 240ABB4918F4A30700E9AB37 /* THAutoMapperDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		240ABB2118F4A30700E9AB37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TH;
+				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					240ABB4818F4A30700E9AB37 = {
+						TestTargetID = 240ABB2818F4A30700E9AB37;
+					};
+				};
+			};
+			buildConfigurationList = 240ABB2418F4A30700E9AB37 /* Build configuration list for PBXProject "THAutoMapperDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 240ABB2018F4A30700E9AB37;
+			productRefGroup = 240ABB2A18F4A30700E9AB37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				240ABB2818F4A30700E9AB37 /* THAutoMapperDemo */,
+				240ABB4818F4A30700E9AB37 /* THAutoMapperDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		240ABB2718F4A30700E9AB37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240ABB3918F4A30700E9AB37 /* InfoPlist.strings in Resources */,
+				240ABB4418F4A30700E9AB37 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		240ABB4718F4A30700E9AB37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240ABB5618F4A30700E9AB37 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		240ABB2518F4A30700E9AB37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240ABB3F18F4A30700E9AB37 /* THAppDelegate.m in Sources */,
+				240ABB4218F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld in Sources */,
+				240ABB3B18F4A30700E9AB37 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		240ABB4518F4A30700E9AB37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240ABB5818F4A30700E9AB37 /* THAutoMapperDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		240ABB5018F4A30700E9AB37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 240ABB2818F4A30700E9AB37 /* THAutoMapperDemo */;
+			targetProxy = 240ABB4F18F4A30700E9AB37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		240ABB3718F4A30700E9AB37 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				240ABB3818F4A30700E9AB37 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		240ABB5418F4A30700E9AB37 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				240ABB5518F4A30700E9AB37 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		240ABB5918F4A30700E9AB37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		240ABB5A18F4A30700E9AB37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		240ABB5C18F4A30700E9AB37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "THAutoMapperDemo/THAutoMapperDemo-Prefix.pch";
+				INFOPLIST_FILE = "THAutoMapperDemo/THAutoMapperDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		240ABB5D18F4A30700E9AB37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "THAutoMapperDemo/THAutoMapperDemo-Prefix.pch";
+				INFOPLIST_FILE = "THAutoMapperDemo/THAutoMapperDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		240ABB5F18F4A30700E9AB37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/THAutoMapperDemo.app/THAutoMapperDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "THAutoMapperDemo/THAutoMapperDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "THAutoMapperDemoTests/THAutoMapperDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		240ABB6018F4A30700E9AB37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/THAutoMapperDemo.app/THAutoMapperDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "THAutoMapperDemo/THAutoMapperDemo-Prefix.pch";
+				INFOPLIST_FILE = "THAutoMapperDemoTests/THAutoMapperDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		240ABB2418F4A30700E9AB37 /* Build configuration list for PBXProject "THAutoMapperDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				240ABB5918F4A30700E9AB37 /* Debug */,
+				240ABB5A18F4A30700E9AB37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		240ABB5B18F4A30700E9AB37 /* Build configuration list for PBXNativeTarget "THAutoMapperDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				240ABB5C18F4A30700E9AB37 /* Debug */,
+				240ABB5D18F4A30700E9AB37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		240ABB5E18F4A30700E9AB37 /* Build configuration list for PBXNativeTarget "THAutoMapperDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				240ABB5F18F4A30700E9AB37 /* Debug */,
+				240ABB6018F4A30700E9AB37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		240ABB4018F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				240ABB4118F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodel */,
+			);
+			currentVersion = 240ABB4118F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodel */;
+			path = THAutoMapperDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 240ABB2118F4A30700E9AB37 /* Project object */;
+}

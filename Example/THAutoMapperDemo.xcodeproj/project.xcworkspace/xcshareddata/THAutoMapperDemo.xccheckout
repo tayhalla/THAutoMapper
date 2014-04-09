@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>86D41FFD-8578-4897-96B9-0F8F1304A62F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>THAutoMapperDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D6DA940C-0CB8-441C-AF21-7CBC380DE87D</key>
+		<string>https://github.com/tayhalla/THAutoMapper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>THAutoMapperDemo/THAutoMapperDemo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D6DA940C-0CB8-441C-AF21-7CBC380DE87D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tayhalla/THAutoMapper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D6DA940C-0CB8-441C-AF21-7CBC380DE87D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D6DA940C-0CB8-441C-AF21-7CBC380DE87D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>THAutoMapper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
