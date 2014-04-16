@@ -1,0 +1,377 @@
+TTHAutoMapperDemo
+v6
+r1
+cCheck dependencies
+cDataModelVersionCompile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld
+cProcessPCH /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.pch THAutoMapperDemo/THAutoMapperDemo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o /Users/Tay/iOS\ Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo normal i386
+cCopyStringsFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/en.lproj/InfoPlist.strings THAutoMapperDemo/en.lproj/InfoPlist.strings
+cCompileAssetCatalog /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/Images.xcassets
+cProcessInfoPlistFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Info.plist /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Info.plist
+cGenerateDSYMFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo
+cTouch /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk
+c00000000534ACC260000000000000198
+t1397410854
+s408
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/SDKSettings.plist
+c00000000531F9DE400000000000003B4
+t1394580964
+s948
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000531F9DE8000000000000019E
+t1394580968
+s414
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+c00000000531F9DE900000000006CED60
+t1394580969
+s7138656
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000534ACC0D0000000000446820
+t1397410829
+s4483104
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000531F9DEA000000000088D8C0
+t1394580970
+s8968384
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000531F9DEC0000000001F1DE10
+t1394580972
+s32628240
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000531F9DF80000000000000ADC
+t1394580984
+s2780
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.pch
+t1397659807
+s122988
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o
+t1397659807
+s55512
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o
+t1397659807
+s77048
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAutoMapperDemo.LinkFileList
+c00000000534E989F00000000000001FA
+t1397659807
+s506
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o
+t1397659807
+s3612
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/assetcatalog_dependencies.txt
+t1397659809
+s413
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/assetcatalog_generated_info.plist
+t1397659809
+s525
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app
+t1397659809
+s306
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM
+t2
+s0
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Info.plist
+t1397659809
+s1217
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/PkgInfo
+t1397659809
+s8
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo
+t1397659807
+s45656
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd
+t1397659807
+s170
+
+N/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/en.lproj/InfoPlist.strings
+t1397659808
+s42
+
+N/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/Images.xcassets
+c00000000534DDF2D0000000000000088
+t1397612333
+s136
+
+N/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m
+c00000000534DDF2D0000000000001A7A
+t1397612333
+s6778
+
+N/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Info.plist
+c00000000534DDF2D00000000000005A9
+t1397612333
+s1449
+
+N/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Prefix.pch
+c00000000534DDF2D000000000000017A
+t1397612333
+s378
+
+N/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld
+c00000000534DDF2D0000000000000088
+t1397612333
+s136
+
+N/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/en.lproj/InfoPlist.strings
+c00000000534DDF2D000000000000002D
+t1397612333
+s45
+
+N/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/main.m
+c00000000534DDF2D000000000000012B
+t1397612333
+s299
+
+N/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m
+c00000000534E989F00000000000039BC
+t1397659807
+s14780
+
+CBuild AST from /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m
+r0
+
+CBuild AST from /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/main.m
+r0
+
+CBuild AST from /Users/Tay/iOS\ Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies14d12b1fd0feb841^83a6351fd0feb841^---0#1#1#--18"Check dependencies36"E9AC6085-34D6-4CDA-A6B6-2D2E26D9F6E7-
+
+CCompileAssetCatalog /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/Images.xcassets
+s419352608.009219
+e419352609.310035
+r1
+xCompileAssetCatalog
+x/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app
+x/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/Images.xcassets
+o/* com.apple.actool.compilation-results */
+o/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/LaunchImage-700-568h@2x.png
+o/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Assets.car
+o/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/assetcatalog_generated_info.plist
+o
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection151"CompileAssetCatalog /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app THAutoMapperDemo/Images.xcassets151"CompileAssetCatalog /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app THAutoMapperDemo/Images.xcassets546e0220d0feb841^fa5e4f21d0feb841^-441"/* com.apple.actool.compilation-results *//Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/LaunchImage-700-568h@2x.png/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Assets.car/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@90"file:///Users/Tay/iOS%20Development/THAutoMapper/Example/THAutoMapperDemo/Images.xcassets/0000000000000000^1299"CompileAssetCatalog /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app THAutoMapperDemo/Images.xcassets    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/assetcatalog_generated_info.plist --app-icon AppIcon --launch-image LaunchImage --platform iphonesimulator --minimum-deployment-target 7.1 --target-device iphone --target-device ipad --compress-pngs --compile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/Images.xcassets36"0F22ED0D-6E16-4B85-8704-64C13E35E2E2-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CCompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o /Users/Tay/iOS\ Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s419352607.683147
+e419352607.833125
+r1
+xCompileC
+x/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o
+x/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m
+d/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.h
+o/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m:115:19: warning: unused variable 'propertyClass' [-Wunused-variable]
+o            Class propertyClass = NSClassFromString([attrDesc attributeValueClassName]);
+o                  ^
+o/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m:239:15: warning: unused variable 'lowercaseEntityName' [-Wunused-variable]
+o    NSString *lowercaseEntityName = [[entity name] lowercaseString];
+o              ^
+o2 warnings generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m357"CompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o /Users/Tay/iOS\ Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler4df3ae1fd0feb841^bf47d51fd0feb841^-544"/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m:115:19: warning: unused variable 'propertyClass' [-Wunused-variable]            Class propertyClass = NSClassFromString([attrDesc attributeValueClassName]);                  ^/Users/Tay/iOS Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m:239:15: warning: unused variable 'lowercaseEntityName' [-Wunused-variable]    NSString *lowercaseEntityName = [[entity name] lowercaseString];              ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@31"Unused variable 'propertyClass'-419352607#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@100"file:///Users/Tay/iOS%20Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m0000000000000000^114#18#114#18#4110#0#19"Unused Entity Issue--2@37"Unused variable 'lowercaseEntityName'-419352607#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@100"file:///Users/Tay/iOS%20Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m0000000000000000^238#14#238#14#10820#0#19"Unused Entity Issue--0#0#1#-19%DVTDocumentLocation4@100"file:///Users/Tay/iOS%20Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m0000000000000000^4162"CompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o /Users/Tay/iOS\ Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Tay/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-generated-files.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-own-target-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-all-target-headers.hmap -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-project-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources/i386 -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources -F/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator -include /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch -MMD -MT dependencies -MF /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.d --serialize-diagnostics /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.dia -c /Users/Tay/iOS\ Development/THAutoMapper/THAutoMapper/NSManagedObject+GathrCoreDataSupport.m -o /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o36"0DC59403-3850-4E07-9609-E456AFE10E10-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CCompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s419352607.682748
+e419352607.826795
+r1
+xCompileC
+x/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o
+x/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m
+d/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m274"CompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o THAutoMapperDemo/THAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerb5dfae1fd0feb841^04aad31fd0feb841^---0#0#1#-19%DVTDocumentLocation2@89"file:///Users/Tay/iOS%20Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m0000000000000000^3999"CompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o THAutoMapperDemo/THAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Tay/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-generated-files.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-own-target-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-all-target-headers.hmap -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-project-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources/i386 -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources -F/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator -include /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch -MMD -MT dependencies -MF /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.d --serialize-diagnostics /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.dia -c /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.m -o /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o36"C5CF31A2-2EB1-4F98-AE88-D7E388BA40CB-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CCompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s419352607.682937
+e419352607.820250
+r1
+xCompileC
+x/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o
+x/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/main.m
+d/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection79"Compile /Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/main.m256"CompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o THAutoMapperDemo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler68e9ae1fd0feb841^37fdd11fd0feb841^---0#0#1#-19%DVTDocumentLocation2@80"file:///Users/Tay/iOS%20Development/THAutoMapper/Example/THAutoMapperDemo/main.m0000000000000000^3945"CompileC /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o THAutoMapperDemo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Tay/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-generated-files.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-own-target-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-all-target-headers.hmap -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-project-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources/i386 -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources -F/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator -include /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch -MMD -MT dependencies -MF /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.dia -c /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/main.m -o /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o36"96AAC640-4019-437C-BE84-6B45EA1FBA50-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CCopyStringsFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/en.lproj/InfoPlist.strings THAutoMapperDemo/en.lproj/InfoPlist.strings
+s419352608.008976
+e419352608.010357
+r1
+xCopyStringsFile
+x/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/en.lproj/InfoPlist.strings
+xTHAutoMapperDemo/en.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection48"Copy THAutoMapperDemo/en.lproj/InfoPlist.strings185"CopyStringsFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/en.lproj/InfoPlist.strings THAutoMapperDemo/en.lproj/InfoPlist.stringsab5a0220d0feb841^65a80220d0feb841^---0#0#1#-19%DVTDocumentLocation2@100"file:///Users/Tay/iOS%20Development/THAutoMapper/Example/THAutoMapperDemo/en.lproj/InfoPlist.strings0000000000000000^683"CopyStringsFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/en.lproj/InfoPlist.strings THAutoMapperDemo/en.lproj/InfoPlist.strings    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/en.lproj -- THAutoMapperDemo/en.lproj/InfoPlist.strings36"A31F59E2-D22F-4A17-AE98-222295A6A455-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CDataModelVersionCompile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld
+s419352607.210929
+e419352607.682177
+r1
+xDataModelVersionCompile
+x/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd
+x/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection191"DataModelVersionCompile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld191"DataModelVersionCompile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd THAutoMapperDemo/THAutoMapperDemo.xcdatamodeldae4a361fd0feb841^f0a3ae1fd0feb841^---0#0#1#-19%DVTDocumentLocation2@104"file:///Users/Tay/iOS%20Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld/0000000000000000^1017"DataModelVersionCompile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/momc -XD_MOMC_SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -XD_MOMC_IOS_TARGET_VERSION=7.1 -MOMC_PLATFORMS iphonesimulator -MOMC_PLATFORMS iphoneos -XD_MOMC_TARGET_VERSION=10.6 /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo.xcdatamodeld /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo.momd36"61CB687E-2CC5-4533-B2BC-17FF416AE684-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CGenerateDSYMFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo
+s419352609.313170
+e419352609.342213
+r1
+xGenerateDSYMFile
+x/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM
+x/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Generate /Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM236"GenerateDSYMFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo8b355021d0feb841^ed9b5721d0feb841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/Tay/iOS%20Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM003464dbddffdf42^812"GenerateDSYMFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo -o /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app.dSYM36"C4A99177-8152-49F3-855B-FFD48D974C22-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CLd /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo normal i386
+s419352607.833777
+e419352608.008190
+r1
+xLd
+x/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo
+xnormal
+xi386
+d/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAutoMapperDemo.LinkFileList
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
+d/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAppDelegate.o
+d/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/main.o
+d/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/NSManagedObject+GathrCoreDataSupport.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Security.framework/Security
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libcorecrypto.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_asl.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_configuration.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_malloc.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_platform.dylib
+d/usr/lib/system/libsystem_pthread.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Link /Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo130"Ld /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo normal i3869180d51fd0feb841^091b0220d0feb841^---0#0#1#--1561"Ld /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo normal i386    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export IPHONEOS_DEPLOYMENT_TARGET=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator -F/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator -filelist /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAutoMapperDemo.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=7.1 -framework CoreGraphics -framework CoreData -framework UIKit -framework Foundation -Xlinker -dependency_info -Xlinker /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/Objects-normal/i386/THAutoMapperDemo_dependency_info.dat -o /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/THAutoMapperDemo36"58EF35D4-658B-49AD-A6C0-974D57784CF2-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CProcessInfoPlistFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Info.plist /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Info.plist
+s419352609.310505
+e419352609.312826
+r1
+xProcessInfoPlistFile
+x/Users/Tay/iOS Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Info.plist
+x/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Process /Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Info.plist175"ProcessInfoPlistFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Info.plist THAutoMapperDemo/THAutoMapperDemo-Info.plist5d8a4f21d0feb841^12175021d0feb841^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/Tay/iOS%20Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Info.plist0000000000000000^1031"ProcessInfoPlistFile /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Info.plist THAutoMapperDemo/THAutoMapperDemo-Info.plist    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Info.plist -genpkginfo /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/assetcatalog_generated_info.plist -o /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app/Info.plist36"ABA5FEDF-1340-429A-81FD-C0B1FD0DBDF9-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CProcessPCH /Users/Tay/Library/Developer/Xcode/DerivedData/THAutoMapper-dwzebmgqcyyidhdvljpiajuqmlid/Index/PrecompiledHeaders/THAutoMapperDemo-Prefix-btlhufbfkspkbcdnzttlaenyekro_ast/THAutoMapperDemo-Prefix.pch.pch THAutoMapperDemo/THAutoMapperDemo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.pch THAutoMapperDemo/THAutoMapperDemo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s419352607.211261
+e419352607.509153
+r1
+xProcessPCH
+x/Users/Tay/iOS Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.pch
+xTHAutoMapperDemo/THAutoMapperDemo-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/Tay/iOS Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Precompile THAutoMapperDemo/THAutoMapperDemo-Prefix.pch288"ProcessPCH /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.pch THAutoMapperDemo/THAutoMapperDemo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerf14a361fd0feb841^7d59821fd0feb841^---0#0#1#-19%DVTDocumentLocation2@101"file:///Users/Tay/iOS%20Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Prefix.pch0000000000000000^3858"ProcessPCH /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.pch THAutoMapperDemo/THAutoMapperDemo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Users/Tay/iOS Development/THAutoMapper/Example"    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/Tay/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-generated-files.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-own-target-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-all-target-headers.hmap -iquote /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/THAutoMapperDemo-project-headers.hmap -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources/i386 -I/Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/THAutoMapperDemo.build/Debug-iphonesimulator/THAutoMapperDemo.build/DerivedSources -F/Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator --serialize-diagnostics /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.dia -MMD -MT dependencies -MF /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.d -c /Users/Tay/iOS\ Development/THAutoMapper/Example/THAutoMapperDemo/THAutoMapperDemo-Prefix.pch -o /Users/Tay/iOS\ Development/THAutoMapper/Build/Intermediates/PrecompiledHeaders/THAutoMapperDemo-Prefix-gkciumqagesgmlegkjgpytvvkyfr/THAutoMapperDemo-Prefix.pch.pch36"89AEB7F9-2F17-4D50-9FF2-ED31734C67AC-
+bC0FE890C-7C85-4EA0-87EB-83297CCBF1BA
+
+CTouch /Users/Tay/iOS\ Development/THAutoMapper/Build/Products/Debug-iphonesimulator/THAutoMapperDemo.app
+r0
+

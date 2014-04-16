@@ -8,16 +8,10 @@
 
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
-#import "GathrCoreData.h"
-#import "Serialize.h"
-#import "AppDelegate.h"
-#import "GatherCredentialStore.h"
-#import "SVProgressHUD.h"
-#import "NSObject+PropertySupport.h"
 
 @interface NSManagedObject (GathrCoreDataSupport)
 
-- (BOOL)updateInstanceWithJSONResponse:(NSDictionary *)jsonResponse error:(NSError **)error;
+- (void)updateInstanceWithJSONResponse:(NSDictionary *)jsonResponse error:(NSError **)error;
 - (BOOL)existsOnServer;
 
 @end

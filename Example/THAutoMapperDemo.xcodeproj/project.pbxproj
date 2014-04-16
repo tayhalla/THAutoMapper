@@ -22,6 +22,7 @@
 		240ABB4E18F4A30700E9AB37 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB3218F4A30700E9AB37 /* CoreData.framework */; };
 		240ABB5618F4A30700E9AB37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 240ABB5418F4A30700E9AB37 /* InfoPlist.strings */; };
 		240ABB5818F4A30700E9AB37 /* THAutoMapperDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */; };
+		73EAE35418FE202200130804 /* NSManagedObject+GathrCoreDataSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EAE35218FE202200130804 /* NSManagedObject+GathrCoreDataSupport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		240ABB5318F4A30700E9AB37 /* THAutoMapperDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THAutoMapperDemoTests-Info.plist"; sourceTree = "<group>"; };
 		240ABB5518F4A30700E9AB37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAutoMapperDemoTests.m; sourceTree = "<group>"; };
+		73EAE35118FE202200130804 /* NSManagedObject+GathrCoreDataSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+GathrCoreDataSupport.h"; sourceTree = "<group>"; };
+		73EAE35218FE202200130804 /* NSManagedObject+GathrCoreDataSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+GathrCoreDataSupport.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 		240ABB2018F4A30700E9AB37 = {
 			isa = PBXGroup;
 			children = (
+				73EAE35318FE202200130804 /* THAutoMapper */,
 				240ABB3418F4A30700E9AB37 /* THAutoMapperDemo */,
 				240ABB5118F4A30700E9AB37 /* THAutoMapperDemoTests */,
 				240ABB2B18F4A30700E9AB37 /* Frameworks */,
@@ -151,6 +155,16 @@
 				240ABB5418F4A30700E9AB37 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73EAE35318FE202200130804 /* THAutoMapper */ = {
+			isa = PBXGroup;
+			children = (
+				73EAE35118FE202200130804 /* NSManagedObject+GathrCoreDataSupport.h */,
+				73EAE35218FE202200130804 /* NSManagedObject+GathrCoreDataSupport.m */,
+			);
+			name = THAutoMapper;
+			path = ../THAutoMapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,7 @@
 				240ABB3F18F4A30700E9AB37 /* THAppDelegate.m in Sources */,
 				240ABB4218F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld in Sources */,
 				240ABB3B18F4A30700E9AB37 /* main.m in Sources */,
+				73EAE35418FE202200130804 /* NSManagedObject+GathrCoreDataSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +464,7 @@
 				240ABB5D18F4A30700E9AB37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		240ABB5E18F4A30700E9AB37 /* Build configuration list for PBXNativeTarget "THAutoMapperDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +473,7 @@
 				240ABB6018F4A30700E9AB37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
