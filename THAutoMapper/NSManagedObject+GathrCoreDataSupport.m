@@ -21,12 +21,11 @@ do { \
 // THAutoMapper Standard Warnings Macros
 #define THLog(fmt, ...) NSLog((@"THAutoMapper Warning: " fmt), ##__VA_ARGS__)
 #define THRequiredNilPropertyWarning(attr) THLog(@"A NULL value for a non-optional property (%@) was passed in the provided payload.\nTHAutoMapper will skip.", attr)
-#define THPropertyMismatchWarning(attr) THLog(@"A NULL value for a non-optional property (%@) was passed in the provided payload.\nTHAutoMapper will skip.", attr)
+#define THPropertyMismatchWarning(attr) THLog(@"Unable to map the (%@) remote property to a local property.\nTHAutoMapper will skip.", attr)
 
 typedef enum THAutoMapperParseMethod {
     THAutoMapperParseWithoutClassPrefix,
-    THAutoMapperParseWithClassPrefix,
-    THAutoMapperParseWithCapitalizedClassPrefix,
+    THAutoMapperParseWithClassPrefix
 } THAutoMapperParseMethod;
 
 static NSString *__sentinelPropertyName = nil;
@@ -88,9 +87,6 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
         case THAutoMapperParseWithClassPrefix:
             return payload[NSStringFromClass([self class])];
             break;
-        case THAutoMapperParseWithCapitalizedClassPrefix:
-            return payload[[NSStringFromClass([self class]) capitalizedString]];
-            break;
         default:
             return nil;
             break;
@@ -107,103 +103,97 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
                        error:(NSError **)error
 {
     for (NSString *attribute in payload) {
-
-        // Preforming any needed normalization of the property string
-        NSString *attributeCamalized = [self normalizeRemoteProperty:attribute];
+        NSString *normalizedAttribute = [self normalizeRemoteProperty:attribute];
+        NSAttributeDescription *attrDesc = [objProperties objectForKey:normalizedAttribute];
         
-        // Checking for presenece of property in the object
-        NSAttributeDescription *attrDesc = [objProperties objectForKey:attributeCamalized];
-        
-        // Making sure we're still on the same page
         if (attrDesc) {
-            
             Class propertyClass = NSClassFromString([attrDesc attributeValueClassName]);
             id value = [payload objectForKey:attribute];
             
-            // Setting the prop while calling the 'deserialize' catagory method
             if ([value isKindOfClass:[NSNull class]]) value = nil;
             if (![attrDesc isOptional] && !value) {
                 THRequiredNilPropertyWarning(attribute);
                 continue;
             }
             
-            // 'deserialize' is a category I have on NSObject and certain other objects
-            // where I want a certain return string format - i.e. NSDates serialize
-            // back to a predefined string format I have.
-            [self willChangeValueForKey:attributeCamalized];
-            [self setValue:[self deserializeProperty:attributeCamalized withClass:propertyClass] forKey:attributeCamalized];
-            [self didChangeValueForKey:attributeCamalized];
-            
+            [self willChangeValueForKey:normalizedAttribute];
+            [self setValue:[self deserializeProperty:normalizedAttribute withClass:propertyClass] forKey:normalizedAttribute];
+            [self didChangeValueForKey:normalizedAttribute];
         } else {
-            // stop here for unrecognized attributes
+            THPropertyMismatchWarning(normalizedAttribute);
         }
     }
-    
 }
 
 - (void)buildRelationshipsWithPayload:(NSDictionary *)payload
                                 error:(NSError **)error
 {
-    // Build Relationships
     NSDictionary *relationships = [[self entity] relationshipsByName];
     [relationships enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        id relationObject = [payload objectForKey:(NSString *)key];
-        if (relationObject != nil) {
+        id relation = [payload objectForKey:(NSString *)key];
+        if (relation) {
             NSEntityDescription *entity = [(NSRelationshipDescription *)obj destinationEntity];
             NSString *entityName = [entity name];
-            Class klass = NSClassFromString(entityName);
-            
-            if ([relationObject isKindOfClass:[NSArray class]]) {
-                // Relation type is to-Many
-            } else if ([relationObject isKindOfClass:[NSDictionary class]] || [relationObject isKindOfClass:[NSNumber class]]) {
-                // Relation type is to-one
+            if ([relation isKindOfClass:[NSArray class]]) {
+                [self buildToManyRelationship:relation
+                                        class:NSClassFromString(entityName)
+                                      keyPath:entityName
+                                        error:error];
+            } else if ([relation isKindOfClass:[NSDictionary class]] || [relation isKindOfClass:[NSNumber class]]) {
+                [self buildToOneRelationshipWithObject:relation
+                                                 class:NSClassFromString(entityName)
+                                               keyPath:entityName 
+                                                 error:error];
             }
         }
     }];
 }
 
-- (void)buildToOneRelationshipWithObject:(id)entityPayload class:(Class)klass keyPath:(NSString *)keyPath error:(NSError **)error
+- (void)buildToOneRelationshipWithObject:(id)entityPayload
+                                   class:(Class)klass
+                                 keyPath:(NSString *)keyPath
+                                   error:(NSError **)error
 {
-    id managedObject = nil;
+    id managedObject;
     if ([entityPayload isKindOfClass:[NSDictionary class]]) {
         managedObject = [klass entityForServerSidePayload:(NSDictionary *)entityPayload context:self.managedObjectContext];
         if (managedObject) {
-            NSDictionary *childPayload = @{[NSStringFromClass(klass) lowercaseString] : entityPayload};
-            [managedObject updateInstanceWithJSONResponse:childPayload error:error];
+            [managedObject updateInstanceWithJSONResponse:[self childPayloadForPayload:entityPayload]
+                                                    error:error];
         }
     } else if ([entityPayload isKindOfClass:[NSNumber class]]) {
-        managedObject = [klass entityForServerSidePayload:@{@"id" : entityPayload} context:self.managedObjectContext];
+        managedObject = [klass entityForServerSidePayload:@{@"id" : entityPayload}
+                                                  context:self.managedObjectContext];
     }
-    // Commiting Changes w/ KVO Compliant Code
+    
     [self willChangeValueForKey:keyPath];
     [self setPrimitiveValue:managedObject forKey:keyPath];
     [self didChangeValueForKey:keyPath];
 }
 
-
-
-- (void)buildToManyRelationship
+- (void)buildToManyRelationship:(NSArray *)toManyRelation
+                          class:(Class)klass
+                        keyPath:(NSString *)keyPath
+                          error:(NSError **)error
 {
-    NSArray *relationArray = (NSArray *)relationObject;
-    NSMutableSet *children = [[NSMutableSet alloc] initWithCapacity:relationArray.count];
-    for (id childObject in relationArray) {
+    NSMutableSet *children = [[NSMutableSet alloc] init];
+    for (id childObject in toManyRelation) {
         NSManagedObject *managedObject;
         if ([childObject isKindOfClass:[NSDictionary class]]) {
-            NSDictionary *childDict = (NSDictionary *)childObject;
-            managedObject = [klass entityForServerSidePayload:childDict context:self.managedObjectContext];
+            NSDictionary *childInfo = (NSDictionary *)childObject;
+            managedObject = [klass entityForServerSidePayload:childInfo context:self.managedObjectContext];
             if (managedObject) {
-                NSDictionary *childPayload = @{[entityName lowercaseString] : childDict};
-                [managedObject updateInstanceWithJSONResponse:childPayload error:error];
+                [managedObject updateInstanceWithJSONResponse:[self childPayloadForPayload:childInfo] error:error];
                 [children addObject:managedObject];
             }
         } else if ([childObject isKindOfClass:[NSNumber class]]) {
-            managedObject = [klass entityForServerSidePayload:@{@"id" : childObject} context:self.managedObjectContext];
+            managedObject = [klass entityForServerSidePayload:@{[self remoteIndexKey] : childObject} context:self.managedObjectContext];
             [children addObject:managedObject];
         }
     }
     
     // Accessing to-many proxy set
-    NSMutableSet *proxySet = [self mutableSetValueForKey:key];
+    NSMutableSet *proxySet = [self mutableSetValueForKey:keyPath];
     
     // Generate Union Set
     NSMutableSet *childrenUnion = [children mutableCopy];
@@ -214,14 +204,29 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
     [childrenMinus minusSet:children];
     
     // Implementing Union Set Mutation on To-Many Relation
-    [self willChangeValueForKey:key withSetMutation:NSKeyValueUnionSetMutation usingObjects:childrenUnion];
+    [self willChangeValueForKey:keyPath withSetMutation:NSKeyValueUnionSetMutation usingObjects:childrenUnion];
     [proxySet unionSet:childrenUnion];
-    [self didChangeValueForKey:key withSetMutation:NSKeyValueUnionSetMutation usingObjects:childrenUnion];
+    [self didChangeValueForKey:keyPath withSetMutation:NSKeyValueUnionSetMutation usingObjects:childrenUnion];
     
     // Implementing Minus Set Mutation on To-Many Relation
-    [self willChangeValueForKey:key withSetMutation:NSKeyValueMinusSetMutation usingObjects:childrenMinus];
+    [self willChangeValueForKey:keyPath withSetMutation:NSKeyValueMinusSetMutation usingObjects:childrenMinus];
     [proxySet minusSet:childrenMinus];
-    [self didChangeValueForKey:key withSetMutation:NSKeyValueMinusSetMutation usingObjects:childrenMinus];
+    [self didChangeValueForKey:keyPath withSetMutation:NSKeyValueMinusSetMutation usingObjects:childrenMinus];
+}
+
+- (NSDictionary *)childPayloadForPayload:(NSDictionary *)payload
+{
+    switch (__topLevelClassNameInPayload) {
+        case THAutoMapperParseWithoutClassPrefix:
+            return payload;
+            break;
+        case THAutoMapperParseWithClassPrefix:
+            return @{NSStringFromClass([self class]) : payload};
+            break;
+        default:
+            return nil;
+            break;
+    }
 }
 
 - (BOOL)existsOnServer
@@ -242,52 +247,33 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
 	return NSClassFromString([className capitalizedString]);
 }
 
-+ (id)entityForServerSidePayload:(NSDictionary *)payload
+- (id)entityForServerSidePayload:(NSDictionary *)payload
                          context:(NSManagedObjectContext *)context
 {
-    NSNumber *uniqueId = [payload objectForKey:@"id"];
-    BOOL isAlive = [payload objectForKey:@"is_alive"] ? [[payload objectForKey:@"is_alive"] boolValue] : YES;
+    NSNumber *indexedId = payload[[self remoteIndexKey]];
+    BOOL isAlive = ![payload objectForKey:[self sentinelKeyForClass]];
     
     NSManagedObject *returnObject;
     
-    const char *className = class_getName(self);
-    NSString *classString = [NSString stringWithUTF8String:className];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:classString inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[entity name]];
-    NSString *lowercaseEntityName = [[entity name] lowercaseString];
-    NSPredicate *pred;
     
-    // I need to unique against Photo UIDs since they can be existent prior to assigning of a ID by the server.
-//    if (self == [Photo class] && [payload objectForKey:@"asset_uid"]) {
-//        NSString *assetUID = [payload objectForKey:@"asset_uid"];
-//        pred = [NSPredicate predicateWithFormat:@"assetUid == %@", assetUID];
-//    } else {
-//        NSString *strPred = [NSString stringWithFormat:@"%@Id == %@", lowercaseEntityName, uniqueId];
-//        pred = [NSPredicate predicateWithFormat:strPred];
-//    }
+    NSString *strPred       = [NSString stringWithFormat:@"%@ == %@", [self localIndexKey], indexedId];
+    NSPredicate *predicate  = [NSPredicate predicateWithFormat:strPred];
     
-    [request setPredicate:pred];
+    [request setPredicate:predicate];
     [request setFetchLimit:1];
     
     NSError *error;
     NSArray *results = [context executeFetchRequest:request error:&error];
     NSAssert(results, @"core data failure");
     if ([results count] == 0 && isAlive) {
-        returnObject = [NSEntityDescription insertNewObjectForEntityForName:classString inManagedObjectContext:context];
+        returnObject = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
+        [returnObject setValue:indexedId forKey:[self localIndexKey]];
     } else {
         returnObject = [results lastObject];
     }
     
-    // Set ID
-    NSString *idSetter = [NSString stringWithFormat:@"set%@Id:", [entity name]];
-    SEL selector = NSSelectorFromString(idSetter);
-    if ([returnObject respondsToSelector:selector])
-    {
-        SuppressPerformSelectorLeakWarning(
-            [returnObject performSelector:selector withObject:uniqueId];
-        );
-    }
-
     return returnObject;
 }
     
@@ -327,15 +313,20 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
 }
 
 - (NSString *)normalizeRemoteProperty:(NSString *)remoteProperty {
-    if([remoteProperty isEqualToString:[self classIndexPropertyName]]) {
+    if([remoteProperty isEqualToString:[self remoteIndexKey]]) {
         remoteProperty = [NSString stringWithFormat:@"%@_id", NSStringFromClass([self class])];
     }
     return remoteProperty;
 }
 
-- (NSString *)classIndexPropertyName
+- (NSString *)remoteIndexKey
 {
     return @"id";
+}
+
+- (NSString *)localIndexKey
+{
+    return [NSString stringWithFormat:@"%@%@", NSStringFromClass([self class]), [[self remoteIndexKey] capitalizedString]];
 }
 
 #pragma mark - DeSerialize Property
