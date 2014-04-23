@@ -1,15 +1,16 @@
 {
-  "singleUserEntityPayloadWithClassNamePrefixed" : {
-    "user" :
-    { "firstName" : "tay",
-      "lastName" : "hall",
-      "height" : 5.925,
-      "id" : 22 }
-  },
-  "singleUserEntityPayloadWithoutClassNamePrefixed" : {
-     "firstName" : "tay",
-      "lastName" : "hall",
-      "height" : 5.925,
-      "id" : 22 }
-  }
+    "singleUserEntityPayloadWithClassNamePrefixed": {
+        "user": {
+            "firstName": "tay",
+            "lastName": "hall",
+            "height": 5.925,
+            "id": 22
+        }
+    },
+    "singleUserEntityPayloadWithoutClassNamePrefixed": {
+        "firstName": "tay",
+        "lastName": "hall",
+        "height": 5.925,
+        "id": 22
+    }
 }

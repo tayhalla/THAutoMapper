@@ -12,6 +12,7 @@
 #import "THAppDelegate.h"
 #import "THSamplePayloads.h"
 #import "NSManagedObject+THAutoMapper.h"
+#import "User+THAutoMapperTest.h"
 
 @interface THAutoMapperDemoTests : XCTestCase
 
@@ -73,7 +74,8 @@
 
 - (void)testSingleUserEntityPayloadWithClassNamePrefixed
 {
-    User *user = (User *)[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
+    [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
+    User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithClassNamePrefixed];
     NSError *updateError;
     [user updateInstanceWithJSONResponse:testDictionary error:&updateError];
@@ -88,8 +90,10 @@
 
 - (void)testSingleUserEntityPayloadWithoutClassNamePrefixed
 {
-    User *user = (User *)[NSEntityDescription entityForName:@"User" inManagedObjectContext:self.context];
-    NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithClassNamePrefixed];
+    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
+    
+    User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
+    NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithoutClassNamePrefixed];
     NSError *updateError;
     [user updateInstanceWithJSONResponse:testDictionary error:&updateError];
     [self saveManagedObjectContext];

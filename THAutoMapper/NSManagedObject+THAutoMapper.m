@@ -14,7 +14,7 @@ do { \
     _Pragma("clang diagnostic pop") \
 } while (0)
 
-#import "NSManagedObject+GathrCoreDataSupport.h"
+#import "NSManagedObject+THAutoMapper.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 
@@ -23,15 +23,10 @@ do { \
 #define THRequiredNilPropertyWarning(attr) THLog(@"A NULL value for a non-optional property (%@) was passed in the provided payload.\nTHAutoMapper will skip.", attr)
 #define THPropertyMismatchWarning(attr) THLog(@"Unable to map the (%@) remote property to a local property.\nTHAutoMapper will skip.", attr)
 
-typedef enum THAutoMapperParseMethod {
-    THAutoMapperParseWithoutClassPrefix,
-    THAutoMapperParseWithClassPrefix
-} THAutoMapperParseMethod;
+@implementation NSManagedObject (GathrCoreDataSupport)
 
 static NSString *__sentinelPropertyName = nil;
-static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPrefix;
-
-@implementation NSManagedObject (GathrCoreDataSupport)
+static NSInteger __topLevelClassNameInPayload;
 
 - (void)updateInstanceWithJSONResponse:(NSDictionary *)payload
                                  error:(NSError **)error
@@ -75,7 +70,7 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
 
 - (BOOL)topLevelClassParity:(NSDictionary *)paylaod
 {
-    return self.class == [self topLevelClassForPayload:paylaod];
+    return (__topLevelClassNameInPayload == THAutoMapperParseWithoutClassPrefix) || self.class == [self topLevelClassForPayload:paylaod];
 }
 
 - (NSDictionary *)remoteObjectPropertiesForPayload:(NSDictionary *)payload
@@ -84,9 +79,11 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
         case THAutoMapperParseWithoutClassPrefix:
             return payload;
             break;
-        case THAutoMapperParseWithClassPrefix:
-            return payload[NSStringFromClass([self class])];
+        case THAutoMapperParseWithCapitalizedClassPrefix: {
+            NSString *classname = NSStringFromClass([self class]);
+            return payload;
             break;
+        }
         default:
             return nil;
             break;
@@ -220,8 +217,26 @@ static NSInteger __topLevelClassNameInPayload = THAutoMapperParseWithoutClassPre
         case THAutoMapperParseWithoutClassPrefix:
             return payload;
             break;
-        case THAutoMapperParseWithClassPrefix:
+        case THAutoMapperParseWithLowercasedClassPrefix:
             return @{NSStringFromClass([self class]) : payload};
+            break;
+        default:
+            return nil;
+            break;
+    }
+}
+
+- (NSString *)remoteClassName
+{
+    switch (__topLevelClassNameInPayload) {
+        case THAutoMapperParseWithCapitalizedClassPrefix:
+            return NSStringFromClass([self class]);
+            break;
+        case THAutoMapperParseWithLowercasedClassPrefix:
+            return [NSStringFromClass([self class]) lowercaseString];
+            break;
+        case THAutoMapperParseWithoutClassPrefix:
+            return nil;
             break;
         default:
             return nil;

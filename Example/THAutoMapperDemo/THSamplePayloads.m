@@ -16,7 +16,9 @@ static NSDictionary *sampleJSONPayload;
 {
     if (!sampleJSONPayload) {
         NSURL *sampleJSONURL = [[NSBundle mainBundle] URLForResource:@"SampleJSON" withExtension:@"json"];
-        sampleJSONPayload = [NSDictionary dictionaryWithContentsOfURL:sampleJSONURL];
+        NSData *data = [NSData dataWithContentsOfFile:[sampleJSONURL path]];
+        sampleJSONPayload = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        NSLog(@"stop");
     }
     return sampleJSONPayload;
 }

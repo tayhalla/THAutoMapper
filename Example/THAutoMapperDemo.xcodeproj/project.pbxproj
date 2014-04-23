@@ -26,6 +26,7 @@
 		73A27D331904220E00AC1C79 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A27D321904220E00AC1C79 /* Dog.m */; };
 		73A27D3B1904241200AC1C79 /* THSamplePayloads.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A27D3A1904241200AC1C79 /* THSamplePayloads.m */; };
 		73A27D3D190425D900AC1C79 /* SampleJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 73A27D3C190425D900AC1C79 /* SampleJSON.json */; };
+		73B96CEF19076593009B8D32 /* User+THAutoMapperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B96CEE19076593009B8D32 /* User+THAutoMapperTest.m */; };
 		73EAE35418FE202200130804 /* NSManagedObject+THAutoMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 73EAE35218FE202200130804 /* NSManagedObject+THAutoMapper.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		73A27D391904241200AC1C79 /* THSamplePayloads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSamplePayloads.h; sourceTree = "<group>"; };
 		73A27D3A1904241200AC1C79 /* THSamplePayloads.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSamplePayloads.m; sourceTree = "<group>"; };
 		73A27D3C190425D900AC1C79 /* SampleJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleJSON.json; sourceTree = "<group>"; };
+		73B96CED19076593009B8D32 /* User+THAutoMapperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+THAutoMapperTest.h"; sourceTree = "<group>"; };
+		73B96CEE19076593009B8D32 /* User+THAutoMapperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+THAutoMapperTest.m"; sourceTree = "<group>"; };
 		73EAE35118FE202200130804 /* NSManagedObject+THAutoMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+THAutoMapper.h"; sourceTree = "<group>"; };
 		73EAE35218FE202200130804 /* NSManagedObject+THAutoMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+THAutoMapper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +176,7 @@
 		73A27D2D190421F800AC1C79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				73B96CEC19076583009B8D32 /* Categories */,
 				73A27D311904220E00AC1C79 /* Dog.h */,
 				73A27D321904220E00AC1C79 /* Dog.m */,
 				73A27D2E1904220E00AC1C79 /* User.h */,
@@ -189,6 +193,15 @@
 				73A27D3A1904241200AC1C79 /* THSamplePayloads.m */,
 			);
 			name = "Sample JSON";
+			sourceTree = "<group>";
+		};
+		73B96CEC19076583009B8D32 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				73B96CED19076593009B8D32 /* User+THAutoMapperTest.h */,
+				73B96CEE19076593009B8D32 /* User+THAutoMapperTest.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		73EAE35318FE202200130804 /* THAutoMapper */ = {
@@ -303,6 +316,7 @@
 				240ABB4218F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld in Sources */,
 				240ABB3B18F4A30700E9AB37 /* main.m in Sources */,
 				73EAE35418FE202200130804 /* NSManagedObject+THAutoMapper.m in Sources */,
+				73B96CEF19076593009B8D32 /* User+THAutoMapperTest.m in Sources */,
 				73A27D3B1904241200AC1C79 /* THSamplePayloads.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
