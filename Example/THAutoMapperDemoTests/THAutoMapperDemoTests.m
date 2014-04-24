@@ -74,7 +74,7 @@
 
 - (void)testSingleUserEntityPayloadWithClassNamePrefixed
 {
-    [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
+    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
     User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithClassNamePrefixed];
     NSError *updateError;
