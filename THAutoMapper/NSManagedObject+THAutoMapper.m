@@ -80,7 +80,7 @@ static NSInteger __topLevelClassNameInPayload;
             return payload;
             break;
         case THAutoMapperParseWithCapitalizedClassPrefix: {
-            NSString *classname = NSStringFromClass([self class]);
+            return NSStringFromClass([self class]);
             return payload;
             break;
         }
