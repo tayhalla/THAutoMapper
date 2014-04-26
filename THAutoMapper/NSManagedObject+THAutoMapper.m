@@ -18,11 +18,6 @@ do { \
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-// THAutoMapper Standard Warnings Macros
-#define THLog(fmt, ...) NSLog((@"THAutoMapper Warning: " fmt), ##__VA_ARGS__)
-#define THRequiredNilPropertyWarning(attr) THLog(@"A NULL value for a non-optional property (%@) was passed in the provided payload.\nTHAutoMapper will skip.", attr)
-#define THPropertyMismatchWarning(attr) THLog(@"Unable to map the (%@) remote property to a local property.\nTHAutoMapper will skip.", attr)
-
 @implementation NSManagedObject (GathrCoreDataSupport)
 
 static NSString *__sentinelPropertyName = nil;
