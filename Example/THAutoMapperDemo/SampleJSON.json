@@ -1,16 +1,94 @@
 {
-    "singleUserEntityPayloadWithClassNamePrefixed": {
+  "singleUserEntityPayloadWithClassNamePrefixed": {
+    "user": {
+      "firstName": "tay",
+      "lastName": "hall",
+      "height": 5.925,
+      "id": 22
+    }
+  },
+  "singleUserEntityPayloadWithoutClassNamePrefixed": {
+    "firstName": "tay",
+    "lastName": "hall",
+    "height": 5.925,
+    "id": 22
+  },
+  "multipleUsersPayloadWithClassNamePrefixed": {
+    "users": [
+      {
         "user": {
-            "firstName": "tay",
-            "lastName": "hall",
-            "height": 5.925,
-            "id": 22
+          "firstName": "tay",
+          "lastName": "hall",
+          "height": 5.925,
+          "id": 22
         }
-    },
-    "singleUserEntityPayloadWithoutClassNamePrefixed": {
+      },
+      {
+        "user": {
+          "firstName": "tay1",
+          "lastName": "hall1",
+          "height": 5.9251,
+          "id": 221
+        }
+      },
+      {
+        "user": {
+          "firstName": "tay2",
+          "lastName": "hall2",
+          "height": 5.9252,
+          "id": 222
+        }
+      },
+      {
+        "user": {
+          "firstName": "tay3",
+          "lastName": "hall3",
+          "height": 5.9253,
+          "id": 223
+        }
+      },
+      {
+        "user": {
+          "firstName": "tay4",
+          "lastName": "hall4",
+          "height": 5.9254,
+          "id": 224
+        }
+      }
+    ]
+  },
+  "multipleUsersPayloadWithoutClassNamePrefixed": {
+    "users": [
+      {
         "firstName": "tay",
         "lastName": "hall",
         "height": 5.925,
         "id": 22
-    }
+      },
+      {
+        "firstName": "tay1",
+        "lastName": "hall1",
+        "height": 5.9251,
+        "id": 221
+      },
+      {
+        "firstName": "tay2",
+        "lastName": "hall2",
+        "height": 5.9252,
+        "id": 222
+      },
+      {
+        "firstName": "tay3",
+        "lastName": "hall3",
+        "height": 5.9253,
+        "id": 223
+      },
+      {
+        "firstName": "tay4",
+        "lastName": "hall4",
+        "height": 5.9254,
+        "id": 224
+      }
+    ]
+  }
 }

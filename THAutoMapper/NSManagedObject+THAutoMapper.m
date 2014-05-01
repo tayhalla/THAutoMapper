@@ -75,19 +75,10 @@ static NSInteger __topLevelClassNameInPayload;
 
 - (NSDictionary *)remoteObjectPropertiesForPayload:(NSDictionary *)payload
 {
-    switch (__topLevelClassNameInPayload) {
-        case THAutoMapperParseWithoutClassPrefix:
-            return payload;
-            break;
-        case THAutoMapperParseWithCapitalizedClassPrefix: {
-            NSString *classname = NSStringFromClass([self class]);
-            return payload;
-            break;
-        }
-        default:
-            return nil;
-            break;
+    if (__topLevelClassNameInPayload == THAutoMapperParseWithoutClassPrefix) {
+        return payload;
     }
+    return payload[[self remoteClassName]];
 }
 
 - (NSString *)sentinelKeyForClass
@@ -114,7 +105,7 @@ static NSInteger __topLevelClassNameInPayload;
             }
             
             [self willChangeValueForKey:normalizedAttribute];
-            [self setValue:[self deserializeProperty:normalizedAttribute withClass:propertyClass] forKey:normalizedAttribute];
+            [self setValue:value forKey:normalizedAttribute];
             [self didChangeValueForKey:normalizedAttribute];
         } else {
             THPropertyMismatchWarning(normalizedAttribute);
@@ -217,8 +208,8 @@ static NSInteger __topLevelClassNameInPayload;
         case THAutoMapperParseWithoutClassPrefix:
             return payload;
             break;
-        case THAutoMapperParseWithLowercasedClassPrefix:
-            return @{NSStringFromClass([self class]) : payload};
+        case THAutoMapperParseWithClassPrefix:
+            return @{[self remoteClassName] : payload};
             break;
         default:
             return nil;
@@ -229,10 +220,7 @@ static NSInteger __topLevelClassNameInPayload;
 - (NSString *)remoteClassName
 {
     switch (__topLevelClassNameInPayload) {
-        case THAutoMapperParseWithCapitalizedClassPrefix:
-            return NSStringFromClass([self class]);
-            break;
-        case THAutoMapperParseWithLowercasedClassPrefix:
+        case THAutoMapperParseWithClassPrefix:
             return [NSStringFromClass([self class]) lowercaseString];
             break;
         case THAutoMapperParseWithoutClassPrefix:
@@ -329,7 +317,7 @@ static NSInteger __topLevelClassNameInPayload;
 
 - (NSString *)normalizeRemoteProperty:(NSString *)remoteProperty {
     if([remoteProperty isEqualToString:[self remoteIndexKey]]) {
-        remoteProperty = [NSString stringWithFormat:@"%@_id", NSStringFromClass([self class])];
+        remoteProperty = [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
     }
     return remoteProperty;
 }
@@ -383,6 +371,11 @@ static NSInteger __topLevelClassNameInPayload;
         __sentinelPropertyName = propertyName;
     }
 }
+
+/*
+ NSNumber encodings
+ https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
+ */
 
 
 @end

@@ -11,8 +11,7 @@
 
 typedef enum THAutoMapperParseMethod {
     THAutoMapperParseWithoutClassPrefix = 0,
-    THAutoMapperParseWithLowercasedClassPrefix = 1,
-    THAutoMapperParseWithCapitalizedClassPrefix = 2
+    THAutoMapperParseWithClassPrefix = 1
 } THAutoMapperParseMethod;
 
 @interface NSManagedObject (GathrCoreDataSupport)
