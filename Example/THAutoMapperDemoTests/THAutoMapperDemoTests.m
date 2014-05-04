@@ -74,18 +74,20 @@
 
 - (void)testSingleUserEntityPayloadWithClassNamePrefixed
 {
-    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
+    [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
     User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithClassNamePrefixed];
     NSError *updateError;
     [user updateInstanceWithJSONResponse:testDictionary error:&updateError];
     [self saveManagedObjectContext];
     
+    NSDictionary *prefixedDictionary = testDictionary[@"user"];
     XCTAssertNil(updateError, @"There was an error with the update process");
-    XCTAssertEqualObjects(user.firstName, testDictionary[@"firstName"], @"User first name was not saved correctly");
-    XCTAssertEqualObjects(user.lastName, testDictionary[@"lastName"], @"User first name was not saved correctly");
-    XCTAssertEqualObjects(user.height, testDictionary[@"height"], @"User first name was not saved correctly");
-    XCTAssertEqualObjects(user.userId, testDictionary[@"id"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.firstName, prefixedDictionary[@"firstName"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.lastName, prefixedDictionary[@"lastName"], @"User last name was not saved correctly");
+    NSLog(@"%s", [user.height objCType]);
+    XCTAssert([user.height floatValue] == [prefixedDictionary[@"height"] floatValue], @"User height was not saved correctly");
+    XCTAssertEqualObjects(user.userId, prefixedDictionary[@"id"], @"User ID was not saved correctly");
 }
 
 - (void)testSingleUserEntityPayloadWithoutClassNamePrefixed
@@ -101,8 +103,43 @@
     XCTAssertNil(updateError, @"There was an error with the update process");
     XCTAssertEqualObjects(user.firstName, testDictionary[@"firstName"], @"User first name was not saved correctly");
     XCTAssertEqualObjects(user.lastName, testDictionary[@"lastName"], @"User first name was not saved correctly");
-    XCTAssertEqualObjects(user.height, testDictionary[@"height"], @"User first name was not saved correctly");
+    XCTAssert([user.height floatValue] == [testDictionary[@"height"] floatValue], @"User height was not saved correctly");
     XCTAssertEqualObjects(user.userId, testDictionary[@"id"], @"User first name was not saved correctly");
 }
+
+- (void)testMultipleUserEntityPayloadWithoutClassNamePrefixed
+{
+    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
+    
+    User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
+    NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithoutClassNamePrefixed];
+    NSError *updateError;
+    [user updateInstanceWithJSONResponse:testDictionary error:&updateError];
+    [self saveManagedObjectContext];
+    
+    XCTAssertNil(updateError, @"There was an error with the update process");
+    XCTAssertEqualObjects(user.firstName, testDictionary[@"firstName"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.lastName, testDictionary[@"lastName"], @"User first name was not saved correctly");
+    XCTAssert([user.height floatValue] == [testDictionary[@"height"] floatValue], @"User height was not saved correctly");
+    XCTAssertEqualObjects(user.userId, testDictionary[@"id"], @"User first name was not saved correctly");
+}
+
+- (void)testMultipleUserEntityPayloadWithClassNamePrefixed
+{
+    [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
+    User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
+    NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithClassNamePrefixed];
+    NSError *updateError;
+    [user updateInstanceWithJSONResponse:testDictionary error:&updateError];
+    [self saveManagedObjectContext];
+    
+    NSDictionary *prefixedDictionary = testDictionary[@"user"];
+    XCTAssertNil(updateError, @"There was an error with the update process");
+    XCTAssertEqualObjects(user.firstName, prefixedDictionary[@"firstName"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.lastName, prefixedDictionary[@"lastName"], @"User last name was not saved correctly");
+    XCTAssert([user.height floatValue] == [prefixedDictionary[@"height"] floatValue], @"User height was not saved correctly");
+    XCTAssertEqualObjects(user.userId, prefixedDictionary[@"id"], @"User ID was not saved correctly");
+}
+
 
 @end
