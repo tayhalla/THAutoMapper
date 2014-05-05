@@ -2,28 +2,31 @@
 //  User.h
 //  THAutoMapperDemo
 //
-//  Created by Taylor Halliday on 4/20/14.
+//  Created by Taylor Halliday on 5/5/14.
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "NSManagedObject+THAutoMapper.h"
+
+@class Cat, Dog;
 
 @interface User : NSManagedObject
 
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSNumber * height;
 @property (nonatomic, retain) NSString * lastName;
-@property (nonatomic, retain) NSString * userId;
-@property (nonatomic, retain) NSSet *dog;
+@property (nonatomic, retain) NSNumber * userId;
+@property (nonatomic, retain) NSDate * birthday;
+@property (nonatomic, retain) NSSet *cats;
+@property (nonatomic, retain) Dog *dog;
 @end
 
 @interface User (CoreDataGeneratedAccessors)
 
-- (void)addDogObject:(NSManagedObject *)value;
-- (void)removeDogObject:(NSManagedObject *)value;
-- (void)addDog:(NSSet *)values;
-- (void)removeDog:(NSSet *)values;
+- (void)addCatsObject:(Cat *)value;
+- (void)removeCatsObject:(Cat *)value;
+- (void)addCats:(NSSet *)values;
+- (void)removeCats:(NSSet *)values;
 
 @end

@@ -33,4 +33,44 @@ static NSDictionary *sampleJSONPayload;
     return [[self testJSON] objectForKey:@"singleUserEntityPayloadWithoutClassNamePrefixed"];
 }
 
++ (NSArray *)multipleUserEntityPayloadWithoutClassNamePrefixed
+{
+    return [[self testJSON] objectForKey:@"multipleUsersPayloadWithoutClassNamePrefixed"];
+}
+
++ (NSArray *)multipleUserEntityPayloadWithClassNamePrefixed
+{
+    return [[self testJSON] objectForKey:@"multipleUsersPayloadWithClassNamePrefixed"];
+}
+
++ (NSArray *)multipleUsersWithSubentityPayloadWithClassNamePrefixed
+{
+    return [[self testJSON] objectForKey:@"multipleUsersWithSubentityPayloadWithClassNamePrefixed"];
+}
+
++ (NSArray *)multipleUsersWithSubentityPayloadWithoutClassNamePrefixed
+{
+    return [[self testJSON] objectForKey:@"multipleUsersWithSubentityPayloadWithoutClassNamePrefixed"];
+}
+
++ (NSArray *)multipleUsersWithMultipleSubentitiesPayloadWithClassNamePrefixed
+{
+    return [[self testJSON] objectForKey:@"multipleUsersWithMultipleSubentitiesPayloadWithClassNamePrefixed"];
+}
+
++ (NSArray *)multipleUsersWithMultipleSubentitiesPayloadWithoutClassNamePrefixed
+{
+    return [[self testJSON] objectForKey:@"multipleUsersWithMultipleSubentitiesPayloadWithoutClassNamePrefixed"];
+}
+
++ (NSDictionary *)objectWithToManyAssoicationsThroughUniqueIds
+{
+    return [[self testJSON] objectForKey:@"objectWithToManyAssoicationsThroughUniqueIds"];
+}
+
++ (NSDictionary *)objectWithToOneAssoicationThroughUniqueIds
+{
+    return [[self testJSON] objectForKey:@"objectWithToOneAssoicationThroughUniqueIds"];
+}
+
 @end

@@ -2,8 +2,8 @@
 //  NSManagedObject+GathrCoreDataSupport.m
 //  GatherApp
 //
-//  Created by Taylor Halliday on 2/28/13.
-//  Copyright (c) 2013 GatherInc. All rights reserved.
+//  Created by Taylor Halliday on 4/28/14.
+//  Copyright (c) 2014 Taylor Halliday. All rights reserved.
 //
 
 #define SuppressPerformSelectorLeakWarning(criticalArea) \
@@ -15,13 +15,48 @@ do { \
 } while (0)
 
 #import "NSManagedObject+THAutoMapper.h"
+#import "THAutoMapperDeserialization.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+
 
 @implementation NSManagedObject (GathrCoreDataSupport)
 
 static NSString *__sentinelPropertyName = nil;
 static NSInteger __topLevelClassNameInPayload;
+
+#pragma mark - Class Methods
+
++ (NSArray *)updateBatchWithJSONResponse:(NSArray *)jsonResponse
+                                 context:(NSManagedObjectContext *)context
+                                   error:(NSError **)error
+{
+    NSMutableArray *returnArray = [[NSMutableArray alloc] init];
+    for (id payloadObject in jsonResponse) {
+        if ([payloadObject isKindOfClass:[NSDictionary class]]) {
+            [returnArray addObject:[self createInstanceWithJSONResponse:payloadObject context:context error:error]];
+        } else if ([payloadObject isKindOfClass:[NSArray class]]) {
+            [returnArray addObject:[self updateBatchWithJSONResponse:payloadObject context:context error:error]];
+        } else {
+            // Ohh Snap! Something weird is in this array!
+            NSDictionary *details = @{NSLocalizedDescriptionKey : @"Illegal member in the JSONResponse provided. Must contain either Dictionaries or Arrays"};
+            *error = [NSError errorWithDomain:@"THAutoMapper" code:400 userInfo:details];
+            return nil;
+        }
+    }
+    return returnArray;
+}
+
++ (instancetype)createInstanceWithJSONResponse:(NSDictionary *)jsonPayload
+                                       context:(NSManagedObjectContext *)context
+                                         error:(NSError **)error
+{
+    NSManagedObject *instance = [self entityForServerSidePayload:[self remoteObjectPropertiesForPayload:jsonPayload] context:context];
+    [instance updateInstanceWithJSONResponse:jsonPayload error:error];
+    return instance;
+}
+
+#pragma mark - Instance Methods
 
 - (void)updateInstanceWithJSONResponse:(NSDictionary *)payload
                                  error:(NSError **)error
@@ -29,25 +64,23 @@ static NSInteger __topLevelClassNameInPayload;
     if ([self topLevelClassParity:payload]) {
         
         // Retrieve remote payload properties
-        NSDictionary *remoteObjectProperties = [self remoteObjectPropertiesForPayload:payload];
+        NSDictionary *remoteObjectProperties = [[self class] remoteObjectPropertiesForPayload:payload];
         
         // Check for sentinel value, and delete object if present
-        if ([remoteObjectProperties objectForKey:[self sentinelKeyForClass]])
+        if ([remoteObjectProperties objectForKey:[[self class] sentinelKeyForClass]]){
             return [self.managedObjectContext deleteObject:self];
+        }
         
         // Retrieve managed object properties
         NSDictionary *managedObjectAttributes = [[self entity] attributesByName];
-        
+        NSDictionary *relationships           = [[self entity] relationshipsByName];
+
         // Map remote properties
         [self mapPayloadProperties:remoteObjectProperties
                 toObjectProperties:managedObjectAttributes
+                     relationships:relationships
                              error:error];
-
-        // Build / Map relationships
-        [self buildRelationshipsWithPayload:remoteObjectProperties
-                                      error:error];
     } else {
-        
         // Ohh Snap! Class parity was required and didn't match!
         NSDictionary *details = @{NSLocalizedDescriptionKey : @"Class mismatch in top level JSON"};
         *error = [NSError errorWithDomain:@"THAutoMapper" code:400 userInfo:details];
@@ -68,78 +101,67 @@ static NSInteger __topLevelClassNameInPayload;
     return (__topLevelClassNameInPayload == THAutoMapperParseWithoutClassPrefix) || self.class == [self topLevelClassForPayload:paylaod];
 }
 
-- (NSDictionary *)remoteObjectPropertiesForPayload:(NSDictionary *)payload
++ (NSDictionary *)remoteObjectPropertiesForPayload:(NSDictionary *)payload
 {
-    switch (__topLevelClassNameInPayload) {
-        case THAutoMapperParseWithoutClassPrefix:
-            return payload;
-            break;
-        case THAutoMapperParseWithCapitalizedClassPrefix: {
-            return NSStringFromClass([self class]);
-            return payload;
-            break;
-        }
-        default:
-            return nil;
-            break;
+    if (__topLevelClassNameInPayload == THAutoMapperParseWithoutClassPrefix) {
+        return payload;
     }
     return payload[[self remoteClassName]];
 }
 
-- (NSString *)sentinelKeyForClass
++ (NSString *)sentinelKeyForClass
 {
     return __sentinelPropertyName;
 }
 
 - (void)mapPayloadProperties:(NSDictionary *)payload
           toObjectProperties:(NSDictionary *)objProperties
+               relationships:(NSDictionary *)relationships
                        error:(NSError **)error
 {
-    for (NSString *attribute in payload) {
-        NSString *normalizedAttribute = [self normalizeRemoteProperty:attribute];
-        NSAttributeDescription *attrDesc = [objProperties objectForKey:normalizedAttribute];
+    [payload enumerateKeysAndObjectsUsingBlock:^(NSString *attributeKey, id attributeValue, BOOL *stop) {
         
-        if (attrDesc) {
-            Class propertyClass = NSClassFromString([attrDesc attributeValueClassName]);
-            id value = [payload objectForKey:attribute];
-            
-            if ([value isKindOfClass:[NSNull class]]) value = nil;
-            if (![attrDesc isOptional] && !value) {
-                THRequiredNilPropertyWarning(attribute);
-                continue;
-            }
-            
-            [self willChangeValueForKey:normalizedAttribute];
-            [self setValue:value forKey:normalizedAttribute];
-            [self didChangeValueForKey:normalizedAttribute];
+        NSString *normalizedAttribute                  = [[self class] normalizeRemoteProperty:attributeKey];
+        NSAttributeDescription *attrDescription        = [objProperties objectForKey:normalizedAttribute];
+        NSRelationshipDescription *relationDescription = [relationships objectForKey:normalizedAttribute];
+
+        if (attrDescription) {
+            [self mapValue:attributeValue toAttributeKey:normalizedAttribute withAttrDescription:attrDescription];
+        } else if (relationDescription) {
+            [self buildRelationshipsWithRelationshipDescription:relationDescription payloadRelation:attributeValue error:error];
         } else {
             THPropertyMismatchWarning(normalizedAttribute);
         }
+    }];
+}
+
+- (void)mapValue:(id)value toAttributeKey:(NSString *)normalizedAttribute withAttrDescription:(NSAttributeDescription *)attrDescription
+{
+    Class propertyClass = NSClassFromString([attrDescription attributeValueClassName]);
+    
+    if ([value isKindOfClass:[NSNull class]]) value = nil;
+    if (![attrDescription isOptional] && !value) {
+        THRequiredNilPropertyWarning(normalizedAttribute);
+    } else {
+        [self willChangeValueForKey:normalizedAttribute];
+        [self setValue:[propertyClass deserialize:value] forKey:normalizedAttribute];
+        [self didChangeValueForKey:normalizedAttribute];
     }
 }
 
-- (void)buildRelationshipsWithPayload:(NSDictionary *)payload
-                                error:(NSError **)error
+- (void)buildRelationshipsWithRelationshipDescription:(NSRelationshipDescription *)relationshipDescription payloadRelation:(id)payload error:(NSError **)error
 {
-    NSDictionary *relationships = [[self entity] relationshipsByName];
-    [relationships enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        id relation = [payload objectForKey:(NSString *)key];
-        if (relation) {
-            NSEntityDescription *entity = [(NSRelationshipDescription *)obj destinationEntity];
-            NSString *entityName = [entity name];
-            if ([relation isKindOfClass:[NSArray class]]) {
-                [self buildToManyRelationship:relation
-                                        class:NSClassFromString(entityName)
-                                      keyPath:entityName
-                                        error:error];
-            } else if ([relation isKindOfClass:[NSDictionary class]] || [relation isKindOfClass:[NSNumber class]]) {
-                [self buildToOneRelationshipWithObject:relation
-                                                 class:NSClassFromString(entityName)
-                                               keyPath:entityName 
-                                                 error:error];
-            }
-        }
-    }];
+    if ([relationshipDescription isToMany]) {
+        [self buildToManyRelationship:payload
+                                class:NSClassFromString([[relationshipDescription destinationEntity] name])
+                              keyPath:[relationshipDescription name]
+                                error:error];
+    } else {
+        [self buildToOneRelationshipWithObject:payload
+                                         class:NSClassFromString([[relationshipDescription destinationEntity] name])
+                                       keyPath:[relationshipDescription name]
+                                         error:error];
+    }
 }
 
 - (void)buildToOneRelationshipWithObject:(id)entityPayload
@@ -150,12 +172,10 @@ static NSInteger __topLevelClassNameInPayload;
     id managedObject;
     if ([entityPayload isKindOfClass:[NSDictionary class]]) {
         managedObject = [klass entityForServerSidePayload:(NSDictionary *)entityPayload context:self.managedObjectContext];
-        if (managedObject) {
-            [managedObject updateInstanceWithJSONResponse:[self childPayloadForPayload:entityPayload]
-                                                    error:error];
-        }
+        [managedObject updateInstanceWithJSONResponse:[klass childPayloadForPayload:entityPayload]
+                                                error:error];
     } else if ([entityPayload isKindOfClass:[NSNumber class]]) {
-        managedObject = [klass entityForServerSidePayload:@{@"id" : entityPayload}
+        managedObject = [klass entityForServerSidePayload:@{[klass remoteIndexKey] : entityPayload}
                                                   context:self.managedObjectContext];
     }
     
@@ -176,12 +196,11 @@ static NSInteger __topLevelClassNameInPayload;
             NSDictionary *childInfo = (NSDictionary *)childObject;
             managedObject = [klass entityForServerSidePayload:childInfo context:self.managedObjectContext];
             if (managedObject) {
-                [managedObject updateInstanceWithJSONResponse:[self childPayloadForPayload:childInfo] error:error];
+                [managedObject updateInstanceWithJSONResponse:[klass childPayloadForPayload:childInfo] error:error];
                 [children addObject:managedObject];
             }
         } else if ([childObject isKindOfClass:[NSNumber class]]) {
-            managedObject = [klass entityForServerSidePayload:@{[self remoteIndexKey] : childObject} context:self.managedObjectContext];
-            [children addObject:managedObject];
+            [children addObject:[klass entityForServerSidePayload:@{[[self class] remoteIndexKey] : childObject} context:self.managedObjectContext]];
         }
     }
     
@@ -207,7 +226,7 @@ static NSInteger __topLevelClassNameInPayload;
     [self didChangeValueForKey:keyPath withSetMutation:NSKeyValueMinusSetMutation usingObjects:childrenMinus];
 }
 
-- (NSDictionary *)childPayloadForPayload:(NSDictionary *)payload
++ (NSDictionary *)childPayloadForPayload:(NSDictionary *)payload
 {
     switch (__topLevelClassNameInPayload) {
         case THAutoMapperParseWithoutClassPrefix:
@@ -222,7 +241,7 @@ static NSInteger __topLevelClassNameInPayload;
     }
 }
 
-- (NSString *)remoteClassName
++ (NSString *)remoteClassName
 {
     switch (__topLevelClassNameInPayload) {
         case THAutoMapperParseWithClassPrefix:
@@ -237,47 +256,38 @@ static NSInteger __topLevelClassNameInPayload;
     }
 }
 
-- (BOOL)existsOnServer
-{
-    Class class = [self class];
-    NSString *classString = [NSStringFromClass(class) lowercaseString];
-    NSString *memberIDSelector = [classString stringByAppendingString:@"Id"];
-    SEL selector = NSSelectorFromString(memberIDSelector);
-    NSNumber *result;
-    SuppressPerformSelectorLeakWarning(result = [self performSelector:selector]);
-    return [result intValue] == 0 ? NO : YES;
-}
-
 #pragma mark -
 #pragma mark Private Instance Calls
 
-- (id)propertyClass:(NSString *)className {
++ (id)propertyClass:(NSString *)className {
 	return NSClassFromString([className capitalizedString]);
 }
 
-- (id)entityForServerSidePayload:(NSDictionary *)payload
++ (id)entityForServerSidePayload:(NSDictionary *)payload
                          context:(NSManagedObjectContext *)context
 {
     NSNumber *indexedId = payload[[self remoteIndexKey]];
-    BOOL isAlive = ![payload objectForKey:[self sentinelKeyForClass]];
+    if ([payload objectForKey:[self sentinelKeyForClass]]) return nil;
     
-    NSManagedObject *returnObject;
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[entity name]];
     
-    NSString *strPred       = [NSString stringWithFormat:@"%@ == %@", [self localIndexKey], indexedId];
-    NSPredicate *predicate  = [NSPredicate predicateWithFormat:strPred];
+    if (indexedId) {
+        NSString *strPred       = [NSString stringWithFormat:@"%@ == %@", [self localIndexKey], indexedId];
+        NSPredicate *predicate  = [NSPredicate predicateWithFormat:strPred];
+        [request setPredicate:predicate];
+    }
     
-    [request setPredicate:predicate];
     [request setFetchLimit:1];
     
     NSError *error;
     NSArray *results = [context executeFetchRequest:request error:&error];
+    NSManagedObject *returnObject;
     NSAssert(results, @"core data failure");
-    if ([results count] == 0 && isAlive) {
+    if ([results count] == 0) {
         returnObject = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
-        [returnObject setValue:indexedId forKey:[self localIndexKey]];
+        if (indexedId) [returnObject setValue:indexedId forKey:[self localIndexKey]];
     } else {
         returnObject = [results lastObject];
     }
@@ -320,21 +330,21 @@ static NSInteger __topLevelClassNameInPayload;
     return [NSCharacterSet characterSetWithCharactersInString:@"-_"];
 }
 
-- (NSString *)normalizeRemoteProperty:(NSString *)remoteProperty {
++ (NSString *)normalizeRemoteProperty:(NSString *)remoteProperty {
     if([remoteProperty isEqualToString:[self remoteIndexKey]]) {
         remoteProperty = [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
     }
     return remoteProperty;
 }
 
-- (NSString *)remoteIndexKey
++ (NSString *)remoteIndexKey
 {
     return @"id";
 }
 
-- (NSString *)localIndexKey
++ (NSString *)localIndexKey
 {
-    return [NSString stringWithFormat:@"%@%@", NSStringFromClass([self class]), [[self remoteIndexKey] capitalizedString]];
+    return [NSString stringWithFormat:@"%@%@", [NSStringFromClass([self class]) lowercaseString] , [[self remoteIndexKey] capitalizedString]];
 }
 
 #pragma mark - DeSerialize Property
@@ -382,5 +392,5 @@ static NSInteger __topLevelClassNameInPayload;
  https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html
  */
 
-
 @end
+

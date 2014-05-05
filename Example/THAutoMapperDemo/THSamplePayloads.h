@@ -10,7 +10,24 @@
 
 @interface THSamplePayloads : NSObject
 
+// Single
 + (NSDictionary *)singleUserEntityPayloadWithClassNamePrefixed;
 + (NSDictionary *)singleUserEntityPayloadWithoutClassNamePrefixed;
+
+// Multiple
++ (NSArray *)multipleUserEntityPayloadWithoutClassNamePrefixed;
++ (NSArray *)multipleUserEntityPayloadWithClassNamePrefixed;
+
+// Multiple with a single sub entity
++ (NSArray *)multipleUsersWithSubentityPayloadWithClassNamePrefixed;
++ (NSArray *)multipleUsersWithSubentityPayloadWithoutClassNamePrefixed;
+
+// Multiple with a multiple sub entities
++ (NSArray *)multipleUsersWithMultipleSubentitiesPayloadWithClassNamePrefixed;
++ (NSArray *)multipleUsersWithMultipleSubentitiesPayloadWithoutClassNamePrefixed;
+
+// Assoications through only uniqueIds
++ (NSDictionary *)objectWithToManyAssoicationsThroughUniqueIds;
++ (NSDictionary *)objectWithToOneAssoicationThroughUniqueIds;
 
 @end

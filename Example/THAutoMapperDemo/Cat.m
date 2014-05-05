@@ -1,23 +1,21 @@
 //
-//  Dog.m
+//  Cat.m
 //  THAutoMapperDemo
 //
 //  Created by Taylor Halliday on 5/5/14.
 //
 //
 
-#import "Dog.h"
+#import "Cat.h"
 #import "User.h"
 
 
-@implementation Dog
+@implementation Cat
 
 @dynamic birthday;
-@dynamic breed;
-@dynamic dogId;
-@dynamic mutt;
 @dynamic name;
 @dynamic weight;
+@dynamic catId;
 @dynamic owner;
 
 @end

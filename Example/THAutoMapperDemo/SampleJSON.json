@@ -13,82 +13,402 @@
     "height": 5.925,
     "id": 22
   },
-  "multipleUsersPayloadWithClassNamePrefixed": {
-    "users": [
-      {
-        "user": {
-          "firstName": "tay",
-          "lastName": "hall",
-          "height": 5.925,
-          "id": 22
-        }
-      },
-      {
-        "user": {
-          "firstName": "tay1",
-          "lastName": "hall1",
-          "height": 5.9251,
-          "id": 221
-        }
-      },
-      {
-        "user": {
-          "firstName": "tay2",
-          "lastName": "hall2",
-          "height": 5.9252,
-          "id": 222
-        }
-      },
-      {
-        "user": {
-          "firstName": "tay3",
-          "lastName": "hall3",
-          "height": 5.9253,
-          "id": 223
-        }
-      },
-      {
-        "user": {
-          "firstName": "tay4",
-          "lastName": "hall4",
-          "height": 5.9254,
-          "id": 224
-        }
-      }
-    ]
-  },
-  "multipleUsersPayloadWithoutClassNamePrefixed": {
-    "users": [
-      {
+  "multipleUsersPayloadWithClassNamePrefixed": [
+    {
+      "user": {
         "firstName": "tay",
         "lastName": "hall",
         "height": 5.925,
-        "id": 22
-      },
-      {
+        "id": 226
+      }
+    },
+    {
+      "user": {
         "firstName": "tay1",
         "lastName": "hall1",
         "height": 5.9251,
-        "id": 221
-      },
-      {
+        "id": 2215
+      }
+    },
+    {
+      "user": {
         "firstName": "tay2",
         "lastName": "hall2",
         "height": 5.9252,
-        "id": 222
-      },
-      {
+        "id": 2224
+      }
+    },
+    {
+      "user": {
         "firstName": "tay3",
         "lastName": "hall3",
         "height": 5.9253,
-        "id": 223
-      },
-      {
+        "id": 2233
+      }
+    },
+    {
+      "user": {
         "firstName": "tay4",
         "lastName": "hall4",
         "height": 5.9254,
-        "id": 224
+        "id": 2242
       }
-    ]
-  }
+    }
+  ],
+  "multipleUsersPayloadWithoutClassNamePrefixed": [
+    {
+      "firstName": "tay",
+      "lastName": "hall",
+      "height": 5.925,
+      "id": 22
+    },
+    {
+      "firstName": "tay1",
+      "lastName": "hall1",
+      "height": 5.9251,
+      "id": 221
+    },
+    {
+      "firstName": "tay2",
+      "lastName": "hall2",
+      "height": 5.9252,
+      "id": 222
+    },
+    {
+      "firstName": "tay3",
+      "lastName": "hall3",
+      "height": 5.9253,
+      "id": 2233
+    },
+    {
+      "firstName": "tay4",
+      "lastName": "hall4",
+      "height": 5.9254,
+      "id": 2244
+    }
+  ],
+  "multipleUsersWithSubentityPayloadWithClassNamePrefixed": [
+    {
+      "user": {
+        "firstName": "tay",
+        "lastName": "hall",
+        "height": 5.925,
+        "id": 226,
+        "dog": {
+          "birthday": "2010-03-30T05:43:25Z",
+          "breed": "golden lab",
+          "id": 2345,
+          "mutt": true,
+          "name": "spot",
+          "weight": 100.30
+        }
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay1",
+        "lastName": "hall1",
+        "height": 5.9251,
+        "id": 2215,
+        "dog": {
+          "birthday": "2010-03-30T05:43:25Z",
+          "breed": "golden lab",
+          "id": 2344,
+          "mutt": true,
+          "name": "spot",
+          "weight": 100.30
+        }
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay2",
+        "lastName": "hall2",
+        "height": 5.9252,
+        "id": 2224,
+        "dog": {
+          "birthday": "2010-03-30T05:43:25Z",
+          "breed": "golden lab",
+          "id": 2343,
+          "mutt": true,
+          "name": "spot",
+          "weight": 100.30
+        }
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay3",
+        "lastName": "hall3",
+        "height": 5.9253,
+        "id": 2233,
+        "dog": {
+          "birthday": "2010-03-30T05:43:25Z",
+          "breed": "golden lab",
+          "id": 2342,
+          "mutt": true,
+          "name": "spot",
+          "weight": 100.30
+        }
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay4",
+        "lastName": "hall4",
+        "height": 5.9254,
+        "id": 2242,
+        "dog": {
+          "birthday": "2010-03-30T05:43:25Z",
+          "breed": "golden lab",
+          "id": 2341,
+          "mutt": true,
+          "name": "spot",
+          "weight": 100.30
+        }
+      }
+    }
+  ],
+  "multipleUsersWithSubentityPayloadWithoutClassNamePrefixed": [
+    {
+      "firstName": "tay",
+      "lastName": "hall",
+      "height": 5.925,
+      "id": 22,
+      "dog": {
+        "birthday": "2010-03-30T05:43:25Z",
+        "breed": "golden lab",
+        "id": 234,
+        "mutt": true,
+        "name": "spot",
+        "weight": 100.30
+      }
+    },
+    {
+      "firstName": "tay1",
+      "lastName": "hall1",
+      "height": 5.9251,
+      "id": 221,
+      "dog": {
+        "birthday": "2010-03-30T05:43:25Z",
+        "breed": "golden lab",
+        "id": 2341,
+        "mutt": true,
+        "name": "spot",
+        "weight": 100.30
+      }
+    },
+    {
+      "firstName": "tay2",
+      "lastName": "hall2",
+      "height": 5.9252,
+      "id": 222,
+      "dog": {
+        "birthday": "2010-03-30T05:43:25Z",
+        "breed": "golden lab",
+        "id": 2342,
+        "mutt": true,
+        "name": "spot",
+        "weight": 100.30
+      }
+    },
+    {
+      "firstName": "tay3",
+      "lastName": "hall3",
+      "height": 5.9253,
+      "id": 2233,
+      "dog": {
+        "birthday": "2010-03-30T05:43:25Z",
+        "breed": "golden lab",
+        "id": 2348,
+        "mutt": true,
+        "name": "spot",
+        "weight": 100.30
+      }
+    },
+    {
+      "firstName": "tay4",
+      "lastName": "hall4",
+      "height": 5.9254,
+      "id": 2244,
+      "dog": {
+        "birthday": "2010-03-30T05:43:25Z",
+        "breed": "golden lab",
+        "id": 23410,
+        "mutt": true,
+        "name": "spot",
+        "weight": 100.30
+      }
+    }
+  ],
+  "multipleUsersWithMultipleSubentitiesPayloadWithClassNamePrefixed": [
+    {
+      "user": {
+        "firstName": "tay",
+        "lastName": "hall",
+        "height": 5.925,
+        "id": 226,
+        "cats": [
+          {
+            "id" : 100,
+            "birthdate": "2010-03-30T05:43:25Z",
+            "name": "fat wiggles",
+            "weight": 100.00
+          }
+        ]
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay1",
+        "lastName": "hall1",
+        "height": 5.9251,
+        "id": 2215,
+        "cats": [
+          {
+            "id" : 1001,
+            "birthdate": "2010-03-30T05:43:25Z",
+            "name": "fat wiggles",
+            "weight": 100.00
+          }
+        ]
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay2",
+        "lastName": "hall2",
+        "height": 5.9252,
+        "id": 2224,
+        "cats": [
+          {
+            "id" : 1002,
+            "birthdate": "2010-03-30T05:43:25Z",
+            "name": "fat wiggles",
+            "weight": 100.00
+          }
+        ]
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay3",
+        "lastName": "hall3",
+        "height": 5.9253,
+        "id": 2233,
+        "cats": [
+          {
+            "id" : 1003,
+            "birthdate": "2010-03-30T05:43:25Z",
+            "name": "fat wiggles",
+            "weight": 100.00
+          }
+        ]
+      }
+    },
+    {
+      "user": {
+        "firstName": "tay4",
+        "lastName": "hall4",
+        "height": 5.9254,
+        "id": 2242,
+        "cats": [
+          {
+            "id" : 1004,
+            "birthdate": "2010-03-30T05:43:25Z",
+            "name": "fat wiggles",
+            "weight": 100.00
+          }
+        ]
+      }
+    }
+  ],
+  "multipleUsersWithMultipleSubentitiesPayloadWithoutClassNamePrefixed": [
+    {
+      "firstName": "tay",
+      "lastName": "hall",
+      "height": 5.925,
+      "id": 22,
+      "cats": [
+        {
+          "id" : 108,
+          "birthdate": "2010-03-30T05:43:25Z",
+          "name": "fat wiggles",
+          "weight": 100.00
+        }
+      ]
+    },
+    {
+      "firstName": "tay1",
+      "lastName": "hall1",
+      "height": 5.9251,
+      "id": 221,
+      "cats": [
+        {
+          "id" : 105,
+          "birthdate": "2010-03-30T05:43:25Z",
+          "name": "fat wiggles",
+          "weight": 100.00
+        }
+      ]
+    },
+    {
+      "firstName": "tay2",
+      "lastName": "hall2",
+      "height": 5.9252,
+      "id": 222,
+      "cats": [
+        {
+          "id" : 103,
+          "birthdate": "2010-03-30T05:43:25Z",
+          "name": "fat wiggles",
+          "weight": 100.00
+        }
+      ]
+    },
+    {
+      "firstName": "tay3",
+      "lastName": "hall3",
+      "height": 5.9253,
+      "id": 2233,
+      "cats": [
+        {
+          "id" : 101,
+          "birthdate": "2010-03-30T05:43:25Z",
+          "name": "fat wiggles",
+          "weight": 100.00
+        }
+      ]
+    },
+    {
+      "firstName": "tay4",
+      "lastName": "hall4",
+      "height": 5.9254,
+      "id": 2244,
+      "cats": [
+        {
+          "id" : 10,
+          "birthdate": "2010-03-30T05:43:25Z",
+          "name": "fat wiggles",
+          "weight": 100.00
+        }
+      ]
+    }
+  ],
+  "objectWithToManyAssoicationsThroughUniqueIds": {
+    "firstName": "tay",
+    "lastName": "hall",
+    "birthdate": "2010-03-30T05:43:25Z",
+    "height": 5.925,
+    "id": 22,
+    "cats": [ 23, 24, 25, 26]
+  },
+    "objectWithToOneAssoicationThroughUniqueIds": {
+    "firstName": "tay",
+    "lastName": "hall",
+    "birthdate": "2010-03-30T05:43:25Z",
+    "height": 5.925,
+    "id": 22,
+    "dog": 101
+  }  
 }

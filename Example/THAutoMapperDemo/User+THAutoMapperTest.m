@@ -10,10 +10,10 @@
 
 @implementation User (THAutoMapperTest)
 
-+ (void)setSentinelString:(NSString *)sentinelPropertyName
-{
-    // TBD
-}
+//+ (void)setSentinelString:(NSString *)sentinelPropertyName
+//{
+//    // TBD
+//}
 
 
 @end
