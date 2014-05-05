@@ -259,8 +259,6 @@
 
 - (void)testObjectWithToOneAssoicationThroughUniqueIds
 {
-    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
-    
     NSDictionary *testDict = [THSamplePayloads objectWithToOneAssoicationThroughUniqueIds];
     NSError *updateError = nil;
     User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
@@ -275,8 +273,6 @@
 
 - (void)testObjectWithToManyAssoicationsThroughUniqueIds
 {
-    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
-    
     NSDictionary *testDict = [THSamplePayloads objectWithToManyAssoicationsThroughUniqueIds];
     NSError *updateError = nil;
     User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
@@ -297,8 +293,49 @@
     for (Cat *kitty in user.cats) {
         XCTAssertTrue([catIds containsObject:kitty.catId], @"Could not find Cat Id in payload");
     }
-    
 }
+
+#pragma mark - Testing nil/Null values
+
+- (void)testObjectWithNullValues
+{
+    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
+    
+    NSDictionary *testDict = [THSamplePayloads objectWithNullValues];
+    NSError *updateError = nil;
+    User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(user.firstName, testDict[@"firstName"], @"User first name was not saved correctly");
+    XCTAssertNil(user.lastName, @"User last name is not nil");
+    XCTAssertNil(user.height, @"User height is not nil");
+    XCTAssertEqualObjects(user.userId, testDict[@"id"], @"User id name was not saved correctly");
+    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"birthday"]], @"User birthday was not saved correctly");
+}
+
+#pragma mark - Testing naming conventions
+
+- (void)testObjectWithCamelCaseRemoteNamingConvention
+{
+    [User setRemoteNamingConvention:THAutoMapperRemoteNamingCamelCase];
+    NSDictionary *testDict = [THSamplePayloads objectCamelCaseNamingConvention];
+    NSError *updateError = nil;
+    User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(user.firstName, testDict[@"first_name"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.lastName, testDict[@"last_name"], @"User last name was not saved correctly");
+    XCTAssert([user.height floatValue] == [testDict[@"height"] floatValue], @"User height is not nil");
+    XCTAssertEqualObjects(user.userId, testDict[@"id"], @"User id name was not saved correctly");
+    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"birthday"]], @"User birthday was not saved correctly");
+}
+
+/*
+ "objectCamelCaseNamingConvention": {
+ "first_name": "tay",
+ "last_name": "halliday",
+ "_birthday": "2010-03-30T05:43:25Z",
+ "height": 5.89,
+ "id": 22    
+ */
 
 #pragma mark - Private Helpers
 
@@ -324,7 +361,6 @@
 /*
  To Test
  - Camelcase
- - nil / null
  */
 
 @end

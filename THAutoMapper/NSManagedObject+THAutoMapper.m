@@ -23,7 +23,8 @@ do { \
 @implementation NSManagedObject (GathrCoreDataSupport)
 
 static NSString *__sentinelPropertyName = nil;
-static NSInteger __topLevelClassNameInPayload;
+static THAutoMapperParseMethod __topLevelClassNameInPayload;
+static THAutoMapperRemoteNaming __remoteNamingConvention;
 
 #pragma mark - Class Methods
 
@@ -360,9 +361,6 @@ static NSInteger __topLevelClassNameInPayload;
 
 #pragma mark - THAutoMapper Configuration
 
-/*
- Setter for JSON Parsing Method
- */
 + (void)setJSONParsingMethod:(THAutoMapperParseMethod)parsingMethod
 {
     if (__topLevelClassNameInPayload != parsingMethod) {
@@ -370,14 +368,21 @@ static NSInteger __topLevelClassNameInPayload;
     }
 }
 
-/*
- Getter for JSON Parsing Method
- 
- DEFAULT is THAutoMapperParseWithoutClassPrefix
- */
 + (THAutoMapperParseMethod)JSONParsingMethod
 {
     return __topLevelClassNameInPayload;
+}
+
++ (void)setRemoteNamingConvention:(THAutoMapperRemoteNaming)namingConvention
+{
+    if (__remoteNamingConvention != namingConvention) {
+        __remoteNamingConvention = namingConvention;
+    }
+}
+
++ (THAutoMapperRemoteNaming)remoteNamingConvention
+{
+    return __remoteNamingConvention;
 }
 
 + (void)setSentinelPropertyName:(NSString *)propertyName
@@ -385,6 +390,11 @@ static NSInteger __topLevelClassNameInPayload;
     if (__sentinelPropertyName != propertyName) {
         __sentinelPropertyName = propertyName;
     }
+}
+
++ (NSString *)sentinelPropertyName:(NSString *)propertyName
+{
+    return __sentinelPropertyName;
 }
 
 /*

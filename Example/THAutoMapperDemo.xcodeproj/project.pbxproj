@@ -61,6 +61,7 @@
 		240ABB5318F4A30700E9AB37 /* THAutoMapperDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THAutoMapperDemoTests-Info.plist"; sourceTree = "<group>"; };
 		240ABB5518F4A30700E9AB37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAutoMapperDemoTests.m; sourceTree = "<group>"; };
+		24EB7DDC191851AA00C327A6 /* THAutoMapperOptionsAndHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAutoMapperOptionsAndHelpers.h; sourceTree = "<group>"; };
 		73039F5D1917E47000017CAF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		73039F5E1917E47000017CAF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		73039F601917E47000017CAF /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 			children = (
 				73C0E8271916B84D00C8784A /* THAutoMapperDeserialization.h */,
 				73C0E8281916B84D00C8784A /* THAutoMapperDeserialization.m */,
+				24EB7DDC191851AA00C327A6 /* THAutoMapperOptionsAndHelpers.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

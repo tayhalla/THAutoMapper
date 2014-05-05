@@ -8,38 +8,7 @@
 
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
-
-/**
- *  Debug macros for letting the user know when a potential error has occured.
- */
-#define THLog(fmt, ...) NSLog((@"THAutoMapper Warning: " fmt), ##__VA_ARGS__)
-#define THRequiredNilPropertyWarning(attr) THLog(@"A NULL value for a non-optional property (%@) was passed in the provided payload.\nTHAutoMapper will skip.", attr)
-#define THPropertyMismatchWarning(attr) THLog(@"Unable to map the (%@) remote property to a local property.\nTHAutoMapper will skip.", attr)
-
-/**
- *  Enumerator for the different parsing methods available.
- */
-typedef NS_ENUM(NSUInteger, THAutoMapperParseMethod) {
-    /**
-     * *** DEFAULT OPTION ***
-     * This parsing method assumes that the JSON payload is NOT prefixed
-     * with a class name. EX: a user object's incomming json payload
-     * { "firstName" : "Taylor",
-     *   "lastName"  : "Halliday"}
-     *
-     */
-    THAutoMapperParseWithoutClassPrefix,
-    /**
-     * This parsing method assumes that the JSON payload is prefixed
-     * with a class name. EX: a user object's incomming json payload
-     * { "user": {
-     *     "firstName" : "Taylor",
-     *     "lastName"  : "Halliday"
-     *   }
-     * }
-     */
-    THAutoMapperParseWithClassPrefix
-};
+#import "THAutoMapperOptionsAndHelpers.h"
 
 /**
  *  THAutoMapper will translate JSON payloads into objects and properties for your core data instances.
@@ -94,5 +63,11 @@ typedef NS_ENUM(NSUInteger, THAutoMapperParseMethod) {
  */
 + (void)setJSONParsingMethod:(THAutoMapperParseMethod)parsingMethod;
 
+/**
+ *  Sets the JSON Parsing method to be used by THAutoMapper
+ *
+ *  @param parsingMethod The parsing method. Options are present in the Enum delcaration.
+ */
++ (void)setRemoteNamingConvention:(THAutoMapperRemoteNaming)namingConvention;
 
 @end
