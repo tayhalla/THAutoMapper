@@ -419,11 +419,14 @@
     "id": 22,
     "cats": [ 23, 24, 25, 26]
   },
-    "objectCamelCaseNamingConvention": {
-    "first_name": "tay",
-    "last_name": "halliday",
-    "_birthday": "2010-03-30T05:43:25Z",
-    "height": 5.89,
+    "objectPascalCaseNamingConvention": {
+    "FirstName": "tay",
+    "LastName": "halliday",
+    "s" : "singleLetterTest",
+    "S" : "upperCaseLetterTest",
+    "Sa" : "doubleLetterCaseLetterTest",
+    "Birthday": "2010-03-30T05:43:25Z",
+    "Height": 5.89,
     "id": 22    
   }
 }

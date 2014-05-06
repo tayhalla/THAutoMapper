@@ -316,26 +316,32 @@
 
 - (void)testObjectWithCamelCaseRemoteNamingConvention
 {
-    [User setRemoteNamingConvention:THAutoMapperRemoteNamingCamelCase];
+    [User setRemoteNamingConvention:THAutoMapperRemoteNamingUnderscore];
     NSDictionary *testDict = [THSamplePayloads objectCamelCaseNamingConvention];
     NSError *updateError = nil;
     User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
     [self saveManagedObjectContext];
     XCTAssertEqualObjects(user.firstName, testDict[@"first_name"], @"User first name was not saved correctly");
-    XCTAssertEqualObjects(user.lastName, testDict[@"last_name"], @"User last name was not saved correctly");
-    XCTAssert([user.height floatValue] == [testDict[@"height"] floatValue], @"User height is not nil");
+    XCTAssertEqualObjects(user.lastName, testDict[@"_last__name_"], @"User last name was not saved correctly");
+    XCTAssert([user.height floatValue] == [testDict[@"__height"] floatValue], @"User height is not nil");
     XCTAssertEqualObjects(user.userId, testDict[@"id"], @"User id name was not saved correctly");
-    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"birthday"]], @"User birthday was not saved correctly");
+    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"__birthday__"]], @"User birthday was not saved correctly");
 }
 
-/*
- "objectCamelCaseNamingConvention": {
- "first_name": "tay",
- "last_name": "halliday",
- "_birthday": "2010-03-30T05:43:25Z",
- "height": 5.89,
- "id": 22    
- */
+- (void)testObjectWithPascalCaseRemoteNamingConvention
+{
+    [User setRemoteNamingConvention:THAutoMapperRemoteNamingPascalCase];
+    NSDictionary *testDict = [THSamplePayloads objectPascalCaseNamingConvention];
+    NSError *updateError = nil;
+    User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(user.firstName, testDict[@"FirstName"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.lastName, testDict[@"LastName"], @"User last name was not saved correctly");
+    XCTAssert([user.height floatValue] == [testDict[@"Height"] floatValue], @"User height is not nil");
+    XCTAssertEqualObjects(user.userId, testDict[@"id"], @"User id name was not saved correctly");
+    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"Birthday"]], @"User birthday was not saved correctly");
+}
+
 
 #pragma mark - Private Helpers
 
@@ -359,8 +365,11 @@
 
 
 /*
- To Test
- - Camelcase
+ ToDo
+ Property Name Overides
+ Index Key Overide
+ Sclarar Value
+ Transient Values
  */
 
 @end

@@ -83,4 +83,9 @@ static NSDictionary *sampleJSONPayload;
     return [[self testJSON] objectForKey:@"objectCamelCaseNamingConvention"];
 }
 
++ (NSDictionary *)objectPascalCaseNamingConvention
+{
+    return [[self testJSON] objectForKey:@"objectPascalCaseNamingConvention"];
+}
+
 @end

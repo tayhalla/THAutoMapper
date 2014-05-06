@@ -35,5 +35,6 @@
 
 // Testing Remote Naming Conventions
 + (NSDictionary *)objectCamelCaseNamingConvention;
++ (NSDictionary *)objectPascalCaseNamingConvention;
 
 @end
