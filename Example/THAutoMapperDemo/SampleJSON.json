@@ -251,7 +251,7 @@
         "cats": [
           {
             "id" : 100,
-            "birthdate": "2010-03-30T05:43:25Z",
+            "birthday": "2010-03-30T05:43:25Z",
             "name": "fat wiggles",
             "weight": 100.00
           }
@@ -267,7 +267,7 @@
         "cats": [
           {
             "id" : 1001,
-            "birthdate": "2010-03-30T05:43:25Z",
+            "birthday": "2010-03-30T05:43:25Z",
             "name": "fat wiggles",
             "weight": 100.00
           }
@@ -283,7 +283,7 @@
         "cats": [
           {
             "id" : 1002,
-            "birthdate": "2010-03-30T05:43:25Z",
+            "birthday": "2010-03-30T05:43:25Z",
             "name": "fat wiggles",
             "weight": 100.00
           }
@@ -299,7 +299,7 @@
         "cats": [
           {
             "id" : 1003,
-            "birthdate": "2010-03-30T05:43:25Z",
+            "birthday": "2010-03-30T05:43:25Z",
             "name": "fat wiggles",
             "weight": 100.00
           }
@@ -315,7 +315,7 @@
         "cats": [
           {
             "id" : 1004,
-            "birthdate": "2010-03-30T05:43:25Z",
+            "birthday": "2010-03-30T05:43:25Z",
             "name": "fat wiggles",
             "weight": 100.00
           }
@@ -332,7 +332,7 @@
       "cats": [
         {
           "id" : 108,
-          "birthdate": "2010-03-30T05:43:25Z",
+          "birthday": "2010-03-30T05:43:25Z",
           "name": "fat wiggles",
           "weight": 100.00
         }
@@ -346,7 +346,7 @@
       "cats": [
         {
           "id" : 105,
-          "birthdate": "2010-03-30T05:43:25Z",
+          "birthday": "2010-03-30T05:43:25Z",
           "name": "fat wiggles",
           "weight": 100.00
         }
@@ -360,7 +360,7 @@
       "cats": [
         {
           "id" : 103,
-          "birthdate": "2010-03-30T05:43:25Z",
+          "birthday": "2010-03-30T05:43:25Z",
           "name": "fat wiggles",
           "weight": 100.00
         }
@@ -374,7 +374,7 @@
       "cats": [
         {
           "id" : 101,
-          "birthdate": "2010-03-30T05:43:25Z",
+          "birthday": "2010-03-30T05:43:25Z",
           "name": "fat wiggles",
           "weight": 100.00
         }
@@ -388,7 +388,7 @@
       "cats": [
         {
           "id" : 10,
-          "birthdate": "2010-03-30T05:43:25Z",
+          "birthday": "2010-03-30T05:43:25Z",
           "name": "fat wiggles",
           "weight": 100.00
         }
@@ -398,7 +398,7 @@
   "objectWithToManyAssoicationsThroughUniqueIds": {
     "firstName": "tay",
     "lastName": "hall",
-    "birthdate": "2010-03-30T05:43:25Z",
+    "birthday": "2010-03-30T05:43:25Z",
     "height": 5.925,
     "id": 22,
     "cats": [ 23, 24, 25, 26]
@@ -406,7 +406,7 @@
     "objectWithToOneAssoicationThroughUniqueIds": {
     "firstName": "tay",
     "lastName": "hall",
-    "birthdate": "2010-03-30T05:43:25Z",
+    "birthday": "2010-03-30T05:43:25Z",
     "height": 5.925,
     "id": 22,
     "dog": 101
