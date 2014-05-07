@@ -432,5 +432,9 @@
     "Birthday": "2010-03-30T05:43:25Z",
     "Height": 5.89,
     "id": 22    
+  },
+    "objectRemoteIndexKeyOverride": {
+    "name" : "Chevy",
+    "__carId": 22    
   }
 }

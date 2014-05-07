@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="carId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="make" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Cat" representedClassName="Cat" syncable="YES">
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="catId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -29,5 +35,6 @@
         <element name="Cat" positionX="-63" positionY="63" width="128" height="118"/>
         <element name="Dog" positionX="-54" positionY="27" width="128" height="150"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Car" positionX="-45" positionY="72" width="128" height="105"/>
     </elements>
 </model>

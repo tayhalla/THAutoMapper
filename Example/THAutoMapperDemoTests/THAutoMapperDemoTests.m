@@ -15,6 +15,9 @@
 #import "User+THAutoMapperTest.h"
 #import "Dog.h"
 #import "Cat.h"
+#import "Car.h"
+#import <stdio.h>
+#import <objc/runtime.h>
 
 @interface THAutoMapperDemoTests : XCTestCase
 
@@ -368,8 +371,42 @@
     XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"Birthday"]], @"User birthday was not saved correctly");
 }
 
+- (void)testRemoteIndexOverride
+{
+    NSDictionary *testDict = [THSamplePayloads objectRemoteIndexKeyOverride];
+    XCTAssert(testDict);
+    
+    NSError *updateError = nil;
+    Car *car = [Car createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(car.name, testDict[@"name"], @"Car name was not saved correctly");
+    XCTAssertEqualObjects(car.carId, testDict[@"__carId"], @"User last name was not saved correctly");
+}
+
+- (void)testRemoteIndexOverride
+{
+    NSDictionary *testDict = [THSamplePayloads objectRemoteIndexKeyOverride];
+    XCTAssert(testDict);
+    
+    NSError *updateError = nil;
+    Car *car = [Car createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(car.name, testDict[@"name"], @"Car name was not saved correctly");
+    XCTAssertEqualObjects(car.carId, testDict[@"__carId"], @"User last name was not saved correctly");
+}
+
 
 #pragma mark - Private Helpers
+
+#pragma mark - Method Overrides
+
+// Override for the remote index key for a the User Class. For the remote index override test.
+id remoteIndexKeyOverride(id self, SEL _cmd) {
+    return @"__userId";
+}
+
+
+#pragma mark - Inflectors
 
 /**
  *  ISO8601 Date Helper

@@ -88,4 +88,9 @@ static NSDictionary *sampleJSONPayload;
     return [[self testJSON] objectForKey:@"objectPascalCaseNamingConvention"];
 }
 
++ (NSDictionary *)objectRemoteIndexKeyOverride
+{
+    return [[self testJSON] objectForKey:@"objectRemoteIndexKeyOverride"];
+}
+
 @end

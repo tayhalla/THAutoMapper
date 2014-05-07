@@ -332,7 +332,7 @@ static THAutoMapperRemoteNaming __remoteNamingConvention;
 }
 
 + (NSString *)normalizeRemoteProperty:(NSString *)remoteProperty {
-    if([remoteProperty isEqualToString:[self remoteIndexKey]]) {
+    if ([remoteProperty isEqualToString:[self remoteIndexKey]]) {
         return [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
     } else {
         return [self convertRemoteKeyToLocalPropertyValue:remoteProperty];
@@ -386,6 +386,11 @@ static THAutoMapperRemoteNaming __remoteNamingConvention;
     }
 }
 
+- (NSDictionary *)propertyMappingOverrides
+{
+    return @{};
+}
+
 + (NSString *)remoteIndexKey
 {
     return @"id";
@@ -393,7 +398,7 @@ static THAutoMapperRemoteNaming __remoteNamingConvention;
 
 + (NSString *)localIndexKey
 {
-    return [NSString stringWithFormat:@"%@%@", [NSStringFromClass([self class]) lowercaseString] , [[self remoteIndexKey] capitalizedString]];
+    return [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
 }
 
 #pragma mark - DeSerialize Property

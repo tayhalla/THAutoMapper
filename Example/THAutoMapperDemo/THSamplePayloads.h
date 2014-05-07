@@ -37,4 +37,7 @@
 + (NSDictionary *)objectCamelCaseNamingConvention;
 + (NSDictionary *)objectPascalCaseNamingConvention;
 
+// Mapping Overrides
++ (NSDictionary *)objectRemoteIndexKeyOverride;
+
 @end
