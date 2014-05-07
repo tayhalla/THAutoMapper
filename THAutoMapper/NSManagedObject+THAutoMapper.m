@@ -23,7 +23,8 @@ do { \
 @implementation NSManagedObject (GathrCoreDataSupport)
 
 static NSString *__sentinelPropertyName = nil;
-static NSInteger __topLevelClassNameInPayload;
+static THAutoMapperParseMethod __topLevelClassNameInPayload;
+static THAutoMapperRemoteNaming __remoteNamingConvention;
 
 #pragma mark - Class Methods
 
@@ -332,9 +333,57 @@ static NSInteger __topLevelClassNameInPayload;
 
 + (NSString *)normalizeRemoteProperty:(NSString *)remoteProperty {
     if([remoteProperty isEqualToString:[self remoteIndexKey]]) {
-        remoteProperty = [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
+        return [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
+    } else {
+        return [self convertRemoteKeyToLocalPropertyValue:remoteProperty];
     }
-    return remoteProperty;
+}
+
++ (NSString *)convertRemoteKeyToLocalPropertyValue:(NSString *)remoteKey
+{
+    if (!remoteKey || remoteKey.length == 0) {
+        return remoteKey;
+    } else {
+        if (__remoteNamingConvention == THAutoMapperRemoteNamingUnderscore) {
+            return [self convertUnderscoredProperty:remoteKey];
+        } else if (__remoteNamingConvention == THAutoMapperRemoteNamingPascalCase) {
+            return [self convertPascalCaseProperty:remoteKey];
+        } else {
+            return remoteKey;
+        }
+    }
+}
+
++ (NSString *)convertUnderscoredProperty:(NSString *)underscoredProperty
+{
+    NSArray *components = [underscoredProperty componentsSeparatedByString:@"_"];
+    NSMutableString *output = [NSMutableString string];
+    
+    BOOL firstLetterOfPropertyReached = NO;
+    for (NSUInteger i = 0; i < components.count; i++) {
+        if ([components[i] length] == 0) continue;
+        if (i == 0 || !firstLetterOfPropertyReached) {
+            [output appendString:components[i]];
+            firstLetterOfPropertyReached = YES;
+        } else {
+            [output appendString:[components[i] capitalizedString]];
+        }
+    }
+    
+    return [NSString stringWithString:output];
+}
+
++ (NSString *)convertPascalCaseProperty:(NSString *)property
+{
+    NSRange firstCharacter = {0, 1};
+    NSString *firstLetter = [[property substringWithRange:firstCharacter] lowercaseString];
+    
+    if (property.length > 1) {
+        NSRange theRest = {1, property.length - 1};
+        return [NSMutableString stringWithFormat:@"%@%@", firstLetter, [property substringWithRange:theRest]];
+    } else {
+        return firstLetter;
+    }
 }
 
 + (NSString *)remoteIndexKey
@@ -360,9 +409,6 @@ static NSInteger __topLevelClassNameInPayload;
 
 #pragma mark - THAutoMapper Configuration
 
-/*
- Setter for JSON Parsing Method
- */
 + (void)setJSONParsingMethod:(THAutoMapperParseMethod)parsingMethod
 {
     if (__topLevelClassNameInPayload != parsingMethod) {
@@ -370,14 +416,21 @@ static NSInteger __topLevelClassNameInPayload;
     }
 }
 
-/*
- Getter for JSON Parsing Method
- 
- DEFAULT is THAutoMapperParseWithoutClassPrefix
- */
 + (THAutoMapperParseMethod)JSONParsingMethod
 {
     return __topLevelClassNameInPayload;
+}
+
++ (void)setRemoteNamingConvention:(THAutoMapperRemoteNaming)namingConvention
+{
+    if (__remoteNamingConvention != namingConvention) {
+        __remoteNamingConvention = namingConvention;
+    }
+}
+
++ (THAutoMapperRemoteNaming)remoteNamingConvention
+{
+    return __remoteNamingConvention;
 }
 
 + (void)setSentinelPropertyName:(NSString *)propertyName
@@ -385,6 +438,11 @@ static NSInteger __topLevelClassNameInPayload;
     if (__sentinelPropertyName != propertyName) {
         __sentinelPropertyName = propertyName;
     }
+}
+
++ (NSString *)sentinelPropertyName:(NSString *)propertyName
+{
+    return __sentinelPropertyName;
 }
 
 /*

@@ -28,6 +28,6 @@
     <elements>
         <element name="Cat" positionX="-63" positionY="63" width="128" height="118"/>
         <element name="Dog" positionX="-54" positionY="27" width="128" height="150"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

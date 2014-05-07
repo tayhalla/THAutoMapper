@@ -30,4 +30,11 @@
 + (NSDictionary *)objectWithToManyAssoicationsThroughUniqueIds;
 + (NSDictionary *)objectWithToOneAssoicationThroughUniqueIds;
 
+// Testing Null Values
++ (NSDictionary *)objectWithNullValues;
+
+// Testing Remote Naming Conventions
++ (NSDictionary *)objectCamelCaseNamingConvention;
++ (NSDictionary *)objectPascalCaseNamingConvention;
+
 @end

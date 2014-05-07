@@ -73,4 +73,19 @@ static NSDictionary *sampleJSONPayload;
     return [[self testJSON] objectForKey:@"objectWithToOneAssoicationThroughUniqueIds"];
 }
 
++ (NSDictionary *)objectWithNullValues
+{
+    return [[self testJSON] objectForKey:@"objectWithNullValues"];
+}
+
++ (NSDictionary *)objectCamelCaseNamingConvention
+{
+    return [[self testJSON] objectForKey:@"objectCamelCaseNamingConvention"];
+}
+
++ (NSDictionary *)objectPascalCaseNamingConvention
+{
+    return [[self testJSON] objectForKey:@"objectPascalCaseNamingConvention"];
+}
+
 @end

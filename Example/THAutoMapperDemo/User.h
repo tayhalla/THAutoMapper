@@ -2,7 +2,7 @@
 //  User.h
 //  THAutoMapperDemo
 //
-//  Created by Taylor Halliday on 5/5/14.
+//  Created by Taylor Halliday on 5/6/14.
 //
 //
 
@@ -13,11 +13,11 @@
 
 @interface User : NSManagedObject
 
+@property (nonatomic, retain) NSDate * birthday;
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSNumber * height;
 @property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSNumber * userId;
-@property (nonatomic, retain) NSDate * birthday;
 @property (nonatomic, retain) NSSet *cats;
 @property (nonatomic, retain) Dog *dog;
 @end

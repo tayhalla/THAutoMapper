@@ -22,7 +22,7 @@
 		240ABB4E18F4A30700E9AB37 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240ABB3218F4A30700E9AB37 /* CoreData.framework */; };
 		240ABB5618F4A30700E9AB37 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 240ABB5418F4A30700E9AB37 /* InfoPlist.strings */; };
 		240ABB5818F4A30700E9AB37 /* THAutoMapperDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */; };
-		73039F5F1917E47000017CAF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 73039F5E1917E47000017CAF /* User.m */; };
+		2442B55A1919482100F39843 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2442B5591919482100F39843 /* User.m */; };
 		73039F621917E47000017CAF /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 73039F611917E47000017CAF /* Cat.m */; };
 		73039F651917E47000017CAF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 73039F641917E47000017CAF /* Dog.m */; };
 		73A27D3B1904241200AC1C79 /* THSamplePayloads.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A27D3A1904241200AC1C79 /* THSamplePayloads.m */; };
@@ -61,8 +61,9 @@
 		240ABB5318F4A30700E9AB37 /* THAutoMapperDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THAutoMapperDemoTests-Info.plist"; sourceTree = "<group>"; };
 		240ABB5518F4A30700E9AB37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		240ABB5718F4A30700E9AB37 /* THAutoMapperDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAutoMapperDemoTests.m; sourceTree = "<group>"; };
-		73039F5D1917E47000017CAF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		73039F5E1917E47000017CAF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		2442B5581919482100F39843 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		2442B5591919482100F39843 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		24EB7DDC191851AA00C327A6 /* THAutoMapperOptionsAndHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAutoMapperOptionsAndHelpers.h; sourceTree = "<group>"; };
 		73039F601917E47000017CAF /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
 		73039F611917E47000017CAF /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
 		73039F631917E47000017CAF /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
@@ -182,12 +183,12 @@
 		73A27D2D190421F800AC1C79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2442B5581919482100F39843 /* User.h */,
+				2442B5591919482100F39843 /* User.m */,
 				73039F631917E47000017CAF /* Dog.h */,
 				73039F641917E47000017CAF /* Dog.m */,
 				73039F601917E47000017CAF /* Cat.h */,
 				73039F611917E47000017CAF /* Cat.m */,
-				73039F5D1917E47000017CAF /* User.h */,
-				73039F5E1917E47000017CAF /* User.m */,
 				73B96CEC19076583009B8D32 /* Categories */,
 			);
 			name = Model;
@@ -217,6 +218,7 @@
 			children = (
 				73C0E8271916B84D00C8784A /* THAutoMapperDeserialization.h */,
 				73C0E8281916B84D00C8784A /* THAutoMapperDeserialization.m */,
+				24EB7DDC191851AA00C327A6 /* THAutoMapperOptionsAndHelpers.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -328,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73039F5F1917E47000017CAF /* User.m in Sources */,
+				2442B55A1919482100F39843 /* User.m in Sources */,
 				240ABB3F18F4A30700E9AB37 /* THAppDelegate.m in Sources */,
 				73039F651917E47000017CAF /* Dog.m in Sources */,
 				240ABB4218F4A30700E9AB37 /* THAutoMapperDemo.xcdatamodeld in Sources */,

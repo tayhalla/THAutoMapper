@@ -2,7 +2,7 @@
 //  User.m
 //  THAutoMapperDemo
 //
-//  Created by Taylor Halliday on 5/5/14.
+//  Created by Taylor Halliday on 5/6/14.
 //
 //
 
@@ -13,11 +13,11 @@
 
 @implementation User
 
+@dynamic birthday;
 @dynamic firstName;
 @dynamic height;
 @dynamic lastName;
 @dynamic userId;
-@dynamic birthday;
 @dynamic cats;
 @dynamic dog;
 

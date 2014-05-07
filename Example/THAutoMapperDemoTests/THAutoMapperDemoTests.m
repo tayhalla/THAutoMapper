@@ -79,6 +79,8 @@
     [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
     User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithClassNamePrefixed];
+    XCTAssert(testDictionary);
+    
     NSError *updateError;
     [user updateInstanceWithJSONResponse:testDictionary error:&updateError];
     [self saveManagedObjectContext];
@@ -98,6 +100,8 @@
     
     User *user = (User *)[NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     NSDictionary *testDictionary = [THSamplePayloads singleUserEntityPayloadWithoutClassNamePrefixed];
+    XCTAssert(testDictionary);
+    
     NSError *updateError;
     [user updateInstanceWithJSONResponse:testDictionary error:&updateError];
     [self saveManagedObjectContext];
@@ -114,6 +118,8 @@
     [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
     
     NSArray *testArray = [THSamplePayloads multipleUserEntityPayloadWithoutClassNamePrefixed];
+    XCTAssert(testArray);
+    
     NSError *updateError = nil;
     NSArray *responseBatch = [User updateBatchWithJSONResponse:testArray context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -134,6 +140,8 @@
     [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
     
     NSArray *testArray = [THSamplePayloads multipleUserEntityPayloadWithClassNamePrefixed];
+    XCTAssert(testArray);
+    
     NSError *updateError = nil;
     NSArray *responseBatch = [User updateBatchWithJSONResponse:testArray context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -154,6 +162,8 @@
     [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
     
     NSArray *testArray = [THSamplePayloads multipleUsersWithSubentityPayloadWithoutClassNamePrefixed];
+    XCTAssert(testArray);
+    
     NSError *updateError = nil;
     NSArray *responseBatch = [User updateBatchWithJSONResponse:testArray context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -180,6 +190,8 @@
     [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
     
     NSArray *testArray = [THSamplePayloads multipleUsersWithSubentityPayloadWithClassNamePrefixed];
+    XCTAssert(testArray);
+    
     NSError *updateError = nil;
     NSArray *responseBatch = [User updateBatchWithJSONResponse:testArray context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -206,6 +218,8 @@
     [User setJSONParsingMethod:THAutoMapperParseWithClassPrefix];
     
     NSArray *testArray = [THSamplePayloads multipleUsersWithMultipleSubentitiesPayloadWithClassNamePrefixed];
+    XCTAssert(testArray);
+    
     NSError *updateError = nil;
     NSArray *responseBatch = [User updateBatchWithJSONResponse:testArray context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -229,6 +243,8 @@
     [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
     
     NSArray *testArray = [THSamplePayloads multipleUsersWithMultipleSubentitiesPayloadWithoutClassNamePrefixed];
+    XCTAssert(testArray);
+    
     NSError *updateError = nil;
     NSArray *responseBatch = [User updateBatchWithJSONResponse:testArray context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -259,9 +275,9 @@
 
 - (void)testObjectWithToOneAssoicationThroughUniqueIds
 {
-    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
-    
     NSDictionary *testDict = [THSamplePayloads objectWithToOneAssoicationThroughUniqueIds];
+    XCTAssert(testDict);
+    
     NSError *updateError = nil;
     User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -275,9 +291,9 @@
 
 - (void)testObjectWithToManyAssoicationsThroughUniqueIds
 {
-    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
-    
     NSDictionary *testDict = [THSamplePayloads objectWithToManyAssoicationsThroughUniqueIds];
+    XCTAssert(testDict);
+    
     NSError *updateError = nil;
     User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
     [self saveManagedObjectContext];
@@ -297,8 +313,61 @@
     for (Cat *kitty in user.cats) {
         XCTAssertTrue([catIds containsObject:kitty.catId], @"Could not find Cat Id in payload");
     }
-    
 }
+
+#pragma mark - Testing nil/Null values
+
+- (void)testObjectWithNullValues
+{
+    [User setJSONParsingMethod:THAutoMapperParseWithoutClassPrefix];
+    
+    NSDictionary *testDict = [THSamplePayloads objectWithNullValues];
+    XCTAssert(testDict);
+    
+    NSError *updateError = nil;
+    User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(user.firstName, testDict[@"firstName"], @"User first name was not saved correctly");
+    XCTAssertNil(user.lastName, @"User last name is not nil");
+    XCTAssertNil(user.height, @"User height is not nil");
+    XCTAssertEqualObjects(user.userId, testDict[@"id"], @"User id name was not saved correctly");
+    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"birthday"]], @"User birthday was not saved correctly");
+}
+
+#pragma mark - Testing naming conventions
+
+- (void)testObjectWithCamelCaseRemoteNamingConvention
+{
+    [User setRemoteNamingConvention:THAutoMapperRemoteNamingUnderscore];
+    NSDictionary *testDict = [THSamplePayloads objectCamelCaseNamingConvention];
+    XCTAssertNotNil(testDict, @"Test payload is nil");
+    
+    NSError *updateError = nil;
+    User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(user.firstName, testDict[@"first_name"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.lastName, testDict[@"_last__name_"], @"User last name was not saved correctly");
+    XCTAssert([user.height floatValue] == [testDict[@"__height"] floatValue], @"User height is not nil");
+    XCTAssertEqualObjects(user.userId, testDict[@"id"], @"User id name was not saved correctly");
+    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"__birthday__"]], @"User birthday was not saved correctly");
+}
+
+- (void)testObjectWithPascalCaseRemoteNamingConvention
+{
+    [User setRemoteNamingConvention:THAutoMapperRemoteNamingPascalCase];
+    NSDictionary *testDict = [THSamplePayloads objectPascalCaseNamingConvention];
+    XCTAssert(testDict);
+    
+    NSError *updateError = nil;
+    User *user = [User createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
+    [self saveManagedObjectContext];
+    XCTAssertEqualObjects(user.firstName, testDict[@"FirstName"], @"User first name was not saved correctly");
+    XCTAssertEqualObjects(user.lastName, testDict[@"LastName"], @"User last name was not saved correctly");
+    XCTAssert([user.height floatValue] == [testDict[@"Height"] floatValue], @"User height is not nil");
+    XCTAssertEqualObjects(user.userId, testDict[@"id"], @"User id name was not saved correctly");
+    XCTAssertEqualObjects(user.birthday, [self RFC3339DeserializationFromString:testDict[@"Birthday"]], @"User birthday was not saved correctly");
+}
+
 
 #pragma mark - Private Helpers
 
@@ -322,9 +391,11 @@
 
 
 /*
- To Test
- - Camelcase
- - nil / null
+ ToDo
+ Property Name Overides
+ Index Key Overide
+ Sclarar Value
+ Transient Values
  */
 
 @end
