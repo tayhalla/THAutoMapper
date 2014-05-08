@@ -434,7 +434,9 @@
     "id": 22    
   },
     "objectRemoteIndexKeyOverride": {
-    "name" : "Chevy",
-    "__carId": 22    
+    "__carId" : 20,
+    "name" : "BigRed",
+    "_maKE": "Chevy",
+    "yEAr" : 1950    
   }
 }

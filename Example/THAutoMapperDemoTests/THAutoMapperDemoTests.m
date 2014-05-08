@@ -52,7 +52,31 @@
 {
     [self deleteAllUsers];
     [self deleteAllDogs];
+    [self deleteAllCars];
+    [self deleteAllCats];
     [self saveManagedObjectContext];
+}
+
+- (void)deleteAllCats
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Cat"];
+    [fetchRequest setIncludesPropertyValues:NO];
+    NSError *fetchError;
+    NSArray *users = [self.context executeFetchRequest:fetchRequest error:&fetchError];
+    for (Cat *cat in users) {
+        [self.context deleteObject:cat];
+    }
+}
+
+- (void)deleteAllCars
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Car"];
+    [fetchRequest setIncludesPropertyValues:NO];
+    NSError *fetchError;
+    NSArray *users = [self.context executeFetchRequest:fetchRequest error:&fetchError];
+    for (Car *car in users) {
+        [self.context deleteObject:car];
+    }
 }
 
 - (void)deleteAllUsers
