@@ -39,5 +39,6 @@
 
 // Mapping Overrides
 + (NSDictionary *)objectRemoteIndexKeyOverride;
++ (NSDictionary *)objectPropertyOverride;
 
 @end

@@ -122,7 +122,7 @@ static THAutoMapperRemoteNaming __remoteNamingConvention;
 {
     [payload enumerateKeysAndObjectsUsingBlock:^(NSString *attributeKey, id attributeValue, BOOL *stop) {
         
-        NSString *normalizedAttribute                  = [[self class] normalizeRemoteProperty:attributeKey];
+        NSString *normalizedAttribute                  = [self mapRemotePropertyValue:attributeKey];
         NSAttributeDescription *attrDescription        = [objProperties objectForKey:normalizedAttribute];
         NSRelationshipDescription *relationDescription = [relationships objectForKey:normalizedAttribute];
 
@@ -331,7 +331,18 @@ static THAutoMapperRemoteNaming __remoteNamingConvention;
     return [NSCharacterSet characterSetWithCharactersInString:@"-_"];
 }
 
+- (NSString *)mapRemotePropertyValue:(NSString *)remoteProperty
+{
+    if ([self propertyMappingOverrides] && [[self propertyMappingOverrides] objectForKey:remoteProperty]) {
+        return [[self propertyMappingOverrides] objectForKey:remoteProperty];
+    } else {
+        return [[self class] normalizeRemoteProperty:remoteProperty];
+    }
+}
+
 + (NSString *)normalizeRemoteProperty:(NSString *)remoteProperty {
+    
+    
     if ([remoteProperty isEqualToString:[self remoteIndexKey]]) {
         return [NSString stringWithFormat:@"%@Id", [NSStringFromClass([self class]) lowercaseString]];
     } else {
@@ -388,7 +399,7 @@ static THAutoMapperRemoteNaming __remoteNamingConvention;
 
 - (NSDictionary *)propertyMappingOverrides
 {
-    return @{};
+    return nil;
 }
 
 + (NSString *)remoteIndexKey

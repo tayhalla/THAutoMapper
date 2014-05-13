@@ -438,5 +438,9 @@
     "name" : "BigRed",
     "_maKE": "Chevy",
     "yEAr" : 1950    
+  },
+  "objectPropertyOverride": {
+    "__carId" : 20,
+    "_cus_tom_mapp_ing" : "customValue"
   }
 }

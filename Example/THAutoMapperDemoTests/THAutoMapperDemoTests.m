@@ -407,15 +407,15 @@
     XCTAssertEqualObjects(car.carId, testDict[@"__carId"], @"User last name was not saved correctly");
 }
 
-- (void)testRemoteIndexOverride
+- (void)testPropertyOverride
 {
-    NSDictionary *testDict = [THSamplePayloads objectRemoteIndexKeyOverride];
+    NSDictionary *testDict = [THSamplePayloads objectPropertyOverride];
     XCTAssert(testDict);
     
     NSError *updateError = nil;
     Car *car = [Car createInstanceWithJSONResponse:testDict context:self.context error:&updateError];
     [self saveManagedObjectContext];
-    XCTAssertEqualObjects(car.name, testDict[@"name"], @"Car name was not saved correctly");
+    XCTAssertEqualObjects(car.custom_attribute, testDict[@"_cus_tom_mapp_ing"], @"Car custom property was not saved correctly");
     XCTAssertEqualObjects(car.carId, testDict[@"__carId"], @"User last name was not saved correctly");
 }
 
@@ -428,7 +428,6 @@
 id remoteIndexKeyOverride(id self, SEL _cmd) {
     return @"__userId";
 }
-
 
 #pragma mark - Inflectors
 
@@ -453,7 +452,6 @@ id remoteIndexKeyOverride(id self, SEL _cmd) {
 
 /*
  ToDo
- Property Name Overides
  Index Key Overide
  Sclarar Value
  Transient Values

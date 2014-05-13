@@ -93,4 +93,9 @@ static NSDictionary *sampleJSONPayload;
     return [[self testJSON] objectForKey:@"objectRemoteIndexKeyOverride"];
 }
 
++ (NSDictionary *)objectPropertyOverride
+{
+    return [[self testJSON] objectForKey:@"objectPropertyOverride"];
+}
+
 @end

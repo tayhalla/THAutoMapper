@@ -2,7 +2,7 @@
 //  Car.m
 //  THAutoMapperDemo
 //
-//  Created by Taylor Halliday on 5/6/14.
+//  Created by Taylor Halliday on 5/12/14.
 //
 //
 
@@ -12,8 +12,9 @@
 @implementation Car
 
 @dynamic carId;
-@dynamic name;
 @dynamic make;
+@dynamic name;
 @dynamic year;
+@dynamic custom_attribute;
 
 @end

@@ -15,4 +15,10 @@
     return @"__carId";
 }
 
+- (NSDictionary *)propertyMappingOverrides
+{
+    // Return a dictionary with the remote key mapped to the Core Data key path
+    return @{@"_cus_tom_mapp_ing": @"custom_attribute"};
+}
+
 @end
