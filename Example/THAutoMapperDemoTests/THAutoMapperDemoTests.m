@@ -452,8 +452,7 @@ id remoteIndexKeyOverride(id self, SEL _cmd) {
 
 /*
  ToDo
- Index Key Overide
- Sclarar Value
+ Scalar Value
  Transient Values
  */
 
